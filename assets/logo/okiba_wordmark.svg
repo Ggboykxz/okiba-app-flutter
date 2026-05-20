@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80">
+  <defs>
+    <style>
+      .text { font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 800; font-size: 48px; letter-spacing: 5px; }
+      .dot { fill: #E8913A; }
+    </style>
+  </defs>
+  <text x="0" y="58" class="text" fill="#1B5E3F">OKIBA</text>
+  <circle class="dot" cx="177" cy="24" r="4"/>
+</svg>

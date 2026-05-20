@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <defs>
+    <style>
+      .trap-1 { fill: #1B5E3F; }
+      .trap-2 { fill: #E8913A; }
+      .trap-3 { fill: #8D6E63; }
+      .trap-4 { fill: #0C0A09; }
+      .line   { stroke: #FAFAF7; stroke-width: 1.2; stroke-linecap: round; fill: none; }
+      .node   { fill: #FAFAF7; }
+      .heart  { fill: #E8913A; }
+      .wordmark { font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 800; font-size: 52px; letter-spacing: 6px; }
+      .dot { fill: #E8913A; }
+    </style>
+  </defs>
+
+  <!-- Mark (scaled) -->
+  <g transform="translate(10,10) scale(0.45)">
+    <polygon class="trap-1" points="92,92 202,22 310,92 240,200 180,210"/>
+    <polygon class="trap-2" points="310,92 378,200 310,310 200,240 210,180"/>
+    <polygon class="trap-3" points="310,310 200,378 92,310 160,200 220,210"/>
+    <polygon class="trap-4" points="92,310 22,200 92,92 200,160 190,220"/>
+    <polyline class="line" points="92,92 200,160 310,92"/>
+    <polyline class="line" points="310,92 240,200 310,310"/>
+    <polyline class="line" points="310,310 200,240 92,310"/>
+    <polyline class="line" points="92,310 160,200 92,92"/>
+    <line class="line" x1="202" y1="22" x2="200" y2="378"/>
+    <line class="line" x1="22" y1="200" x2="378" y2="200"/>
+    <circle class="node" cx="92" cy="92" r="3.5"/>
+    <circle class="node" cx="310" cy="92" r="3.5"/>
+    <circle class="node" cx="310" cy="310" r="3.5"/>
+    <circle class="node" cx="92" cy="310" r="3.5"/>
+    <circle class="node" cx="200" cy="160" r="3"/>
+    <circle class="node" cx="240" cy="200" r="3"/>
+    <circle class="node" cx="200" cy="240" r="3"/>
+    <circle class="node" cx="160" cy="200" r="3"/>
+    <circle class="node" cx="210" cy="180" r="2.5"/>
+    <circle class="node" cx="220" cy="210" r="2.5"/>
+    <circle class="node" cx="190" cy="220" r="2.5"/>
+    <circle class="node" cx="180" cy="210" r="2.5"/>
+    <circle class="heart" cx="200" cy="200" r="6"/>
+  </g>
+
+  <!-- OKIBA wordmark -->
+  <text x="200" y="115" class="wordmark" fill="#1B5E3F">OKIBA</text>
+
+  <!-- Dot on I -->
+  <circle class="dot" cx="396" cy="73" r="4.5"/>
+
+  <!-- Tagline -->
+  <text x="202" y="148" font-family="'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="500" font-size="11" letter-spacing="5" fill="#8D6E63">LE MARCHÉ GABONAIS</text>
+</svg>

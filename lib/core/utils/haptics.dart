@@ -1,0 +1,26 @@
+import 'package:flutter/services.dart';
+
+class AppHaptics {
+  AppHaptics._();
+
+  static void light() => HapticFeedback.lightImpact();
+  static void medium() => HapticFeedback.mediumImpact();
+  static void heavy() => HapticFeedback.heavyImpact();
+  static void selection() => HapticFeedback.selectionClick();
+
+  static void success() {
+    HapticFeedback.mediumImpact();
+    Future.delayed(const Duration(milliseconds: 100), () {
+      HapticFeedback.selectionClick();
+    });
+  }
+
+  static void error() => HapticFeedback.heavyImpact();
+
+  static void buttonPress() => HapticFeedback.lightImpact();
+  static void tabChange() => HapticFeedback.lightImpact();
+  static void addToCart() => HapticFeedback.mediumImpact();
+  static void newDelivery() => HapticFeedback.heavyImpact();
+  static void longPress() => HapticFeedback.mediumImpact();
+  static void scrollSnap() => HapticFeedback.selectionClick();
+}

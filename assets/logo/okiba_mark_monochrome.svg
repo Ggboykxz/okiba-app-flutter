@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <style>
+      .trap  { fill: currentColor; opacity: 0.85; }
+      .trap-alt { fill: currentColor; opacity: 0.6; }
+      .line  { stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; fill: none; opacity: 0.4; }
+      .node  { fill: currentColor; opacity: 0.4; }
+      .heart { fill: currentColor; opacity: 0.9; }
+    </style>
+  </defs>
+
+  <!-- Trapezoids — monochrome with opacity differentiation -->
+  <polygon class="trap" points="92,92 202,22 310,92 240,200 180,210"/>
+  <polygon class="trap-alt" points="310,92 378,200 310,310 200,240 210,180"/>
+  <polygon class="trap" points="310,310 200,378 92,310 160,200 220,210"/>
+  <polygon class="trap-alt" points="92,310 22,200 92,92 200,160 190,220"/>
+
+  <!-- Connecting lines -->
+  <polyline class="line" points="92,92 200,160 310,92"/>
+  <polyline class="line" points="310,92 240,200 310,310"/>
+  <polyline class="line" points="310,310 200,240 92,310"/>
+  <polyline class="line" points="92,310 160,200 92,92"/>
+  <line class="line" x1="202" y1="22" x2="200" y2="378"/>
+  <line class="line" x1="22" y1="200" x2="378" y2="200"/>
+
+  <!-- Nodes -->
+  <circle class="node" cx="92" cy="92" r="3.5"/>
+  <circle class="node" cx="310" cy="92" r="3.5"/>
+  <circle class="node" cx="310" cy="310" r="3.5"/>
+  <circle class="node" cx="92" cy="310" r="3.5"/>
+  <circle class="node" cx="200" cy="160" r="3"/>
+  <circle class="node" cx="240" cy="200" r="3"/>
+  <circle class="node" cx="200" cy="240" r="3"/>
+  <circle class="node" cx="160" cy="200" r="3"/>
+  <circle class="node" cx="210" cy="180" r="2.5"/>
+  <circle class="node" cx="220" cy="210" r="2.5"/>
+  <circle class="node" cx="190" cy="220" r="2.5"/>
+  <circle class="node" cx="180" cy="210" r="2.5"/>
+
+  <!-- Heart center -->
+  <circle class="heart" cx="200" cy="200" r="6"/>
+</svg>
