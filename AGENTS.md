@@ -169,7 +169,7 @@ lib/
 - ✅ **i18n complète** : `l10n.yaml`, ARB FR/EN (~430+ clés), `AppLocalizations.delegate` branché
 - ✅ **Assets intégrés** : 6 widgets réutilisables, 130+ placeholders (Lottie, SVG, PNG, fonts)
 - ✅ **Tous les écrans utilisent** `AppLocalizations.of(context).key` (plus de chaînes hardcodées)
-- ❌ `flutter build apk --debug` — **échoue** (disque plein `/home` 15G saturé)
+- ✅ `flutter build apk --debug` — **BUILD SUCCESSFUL**
 - ❌ Firebase non configuré (pas de `google-services.json`)
 - ❌ Aucune connexion backend — toutes les données sont statiques/mock
 
