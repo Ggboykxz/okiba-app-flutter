@@ -7,6 +7,7 @@ enum LogoVariant {
   vertical,
   wordmark,
   appIcon,
+  appIconDark,
   monochrome,
 }
 
@@ -59,7 +60,9 @@ class OkibaLogo extends StatelessWidget {
       case LogoVariant.vertical:
         return 'assets/logo/okiba_logo_vertical.svg';
       case LogoVariant.wordmark:
-        return 'assets/logo/okiba_logo_horizontal.svg';
+        return 'assets/logo/okiba_wordmark.svg';
+      case LogoVariant.appIconDark:
+        return 'assets/logo/okiba_app_icon_dark.svg';
       case LogoVariant.appIcon:
         return 'assets/logo/okiba_app_icon.svg';
       case LogoVariant.monochrome:
@@ -75,7 +78,7 @@ class OkibaLogo extends StatelessWidget {
       _assetPath,
       width: logoSize,
       height: logoSize,
-      colorFilter: color != null && variant == LogoVariant.monochrome
+      colorFilter: color != null
           ? ColorFilter.mode(color!, BlendMode.srcIn)
           : null,
     );

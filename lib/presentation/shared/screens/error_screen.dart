@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/constants/app_spacing.dart';
+import '../../../core/widgets/okiba_logo.dart';
 
 class ErrorScreen extends StatelessWidget {
   final String title;
@@ -30,13 +30,10 @@ class ErrorScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  'assets/logo/okiba_mark_monochrome.svg',
-                  width: 80,
-                  colorFilter: ColorFilter.mode(
-                    colorScheme.error.withValues(alpha: 0.4),
-                    BlendMode.srcIn,
-                  ),
+                OkibaLogo(
+                  variant: LogoVariant.monochrome,
+                  size: LogoSize.lg,
+                  color: colorScheme.error.withValues(alpha: 0.4),
                 ),
                 const SizedBox(height: AppSpacing.space24),
                 Icon(icon, size: 48, color: colorScheme.error),

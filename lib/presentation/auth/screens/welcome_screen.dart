@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
+import '../../../core/widgets/okiba_logo.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -21,23 +21,16 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             children: [
               const Spacer(flex: 2),
-              SvgPicture.asset(
-                'assets/logo/okiba_mark.svg',
-                width: 100,
-                height: 100,
-                colorFilter: ColorFilter.mode(
-                  colorScheme.primary,
-                  BlendMode.srcIn,
-                ),
+              OkibaLogo(
+                variant: LogoVariant.mark,
+                size: LogoSize.xl,
+                color: colorScheme.primary,
               ),
               const SizedBox(height: AppSpacing.space24),
-              SvgPicture.asset(
-                'assets/logo/okiba_wordmark.svg',
-                width: 180,
-                colorFilter: ColorFilter.mode(
-                  colorScheme.onSurface,
-                  BlendMode.srcIn,
-                ),
+              OkibaLogo(
+                variant: LogoVariant.wordmark,
+                size: LogoSize.xl,
+                color: colorScheme.onSurface,
               ),
               const SizedBox(height: AppSpacing.space8),
               Text(

@@ -67,6 +67,7 @@ flutter:
     - assets/logo/okiba_app_icon.svg
     - assets/logo/okiba_app_icon_dark.svg
     - assets/logo/okiba_mark_monochrome.svg
+    - assets/logo/okiba_wordmark.svg
 
     # Animations Lottie
     - assets/animations/splash_success.json
