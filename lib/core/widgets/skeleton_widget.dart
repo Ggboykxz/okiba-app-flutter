@@ -55,7 +55,7 @@ class _ShimmerEffectState extends State<_ShimmerEffect>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 2000),
     )..repeat();
   }
 

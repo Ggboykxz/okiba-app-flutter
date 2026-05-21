@@ -106,8 +106,8 @@ class AppTheme {
       textTheme: textTheme,
       appBarTheme: AppBarTheme(
         elevation: 0,
-        scrolledUnderElevation: 2,
-        backgroundColor: const Color(0xFFFAFAF7),
+        scrolledUnderElevation: 0,
+        backgroundColor: Colors.transparent,
         foregroundColor: colorScheme.onSurface,
         centerTitle: false,
         titleTextStyle: textTheme.titleLarge,
@@ -115,15 +115,17 @@ class AppTheme {
         systemOverlayStyle: SystemUiOverlayStyle.dark,
       ),
       cardTheme: CardThemeData(
-        elevation: AppSpacing.cardElevation,
+        elevation: 2,
+        shadowColor: AppColors.accentGlow,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSpacing.radius12),
+          borderRadius: BorderRadius.circular(AppSpacing.radius20),
         ),
         color: colorScheme.surface,
         margin: const EdgeInsets.symmetric(
           horizontal: AppSpacing.space16,
           vertical: AppSpacing.space8,
         ),
+        surfaceTintColor: Colors.transparent,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -133,7 +135,7 @@ class AppTheme {
           minimumSize: const Size(0, AppSpacing.touchMin),
           padding: const EdgeInsets.symmetric(horizontal: AppSpacing.space24),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppSpacing.radius12),
+            borderRadius: BorderRadius.circular(AppSpacing.radius16),
           ),
           textStyle: textTheme.labelLarge?.copyWith(color: colorScheme.onPrimary),
         ),
@@ -145,7 +147,7 @@ class AppTheme {
           padding: const EdgeInsets.symmetric(horizontal: AppSpacing.space24),
           side: BorderSide(color: colorScheme.primary, width: 2),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppSpacing.radius12),
+            borderRadius: BorderRadius.circular(AppSpacing.radius16),
           ),
           textStyle: textTheme.labelLarge?.copyWith(color: colorScheme.primary),
         ),
@@ -195,7 +197,7 @@ class AppTheme {
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 8,
-        backgroundColor: colorScheme.surface,
+        backgroundColor: AppColors.surfaceGlass,
         selectedItemColor: colorScheme.primary,
         unselectedItemColor: colorScheme.onSurfaceVariant,
         type: BottomNavigationBarType.fixed,
@@ -210,7 +212,7 @@ class AppTheme {
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: colorScheme.primary,
         foregroundColor: colorScheme.onPrimary,
-        elevation: 2,
+        elevation: 4,
         shape: const CircleBorder(),
         sizeConstraints: const BoxConstraints.tightFor(
           width: AppSpacing.fabSize,
@@ -248,20 +250,22 @@ class AppTheme {
         actionTextColor: colorScheme.inversePrimary,
       ),
       bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: colorScheme.surface,
+        backgroundColor: AppColors.surfaceGlass,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
-            top: Radius.circular(AppSpacing.radius16),
+            top: Radius.circular(AppSpacing.radius24),
           ),
         ),
         elevation: 8,
+        shadowColor: AppColors.accentGlow,
       ),
       dialogTheme: DialogThemeData(
-        backgroundColor: colorScheme.surface,
+        backgroundColor: AppColors.surfaceGlass,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSpacing.radius16),
+          borderRadius: BorderRadius.circular(AppSpacing.radius24),
         ),
         elevation: 8,
+        shadowColor: AppColors.accentGlow,
       ),
     );
   }
@@ -298,20 +302,22 @@ class AppTheme {
       colorScheme: darkScheme,
       scaffoldBackgroundColor: AppColors.backgroundDark,
       appBarTheme: base.appBarTheme.copyWith(
-        backgroundColor: AppColors.backgroundDark,
+        backgroundColor: Colors.transparent,
         foregroundColor: darkScheme.onSurface,
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       cardTheme: CardThemeData(
-        elevation: AppSpacing.cardElevation,
+        elevation: 2,
+        shadowColor: AppColors.accentGlowDark,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSpacing.radius12),
+          borderRadius: BorderRadius.circular(AppSpacing.radius20),
         ),
         color: darkScheme.surface,
         margin: const EdgeInsets.symmetric(
           horizontal: AppSpacing.space16,
           vertical: AppSpacing.space8,
         ),
+        surfaceTintColor: Colors.transparent,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -321,7 +327,7 @@ class AppTheme {
           minimumSize: const Size(0, AppSpacing.touchMin),
           padding: const EdgeInsets.symmetric(horizontal: AppSpacing.space24),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppSpacing.radius12),
+            borderRadius: BorderRadius.circular(AppSpacing.radius16),
           ),
         ),
       ),
@@ -332,7 +338,7 @@ class AppTheme {
         ),
       ),
       bottomNavigationBarTheme: base.bottomNavigationBarTheme.copyWith(
-        backgroundColor: darkScheme.surface,
+        backgroundColor: AppColors.surfaceGlassDark,
         selectedItemColor: darkScheme.primary,
         selectedLabelStyle: null,
         unselectedItemColor: darkScheme.onSurfaceVariant,
@@ -351,6 +357,14 @@ class AppTheme {
         contentTextStyle: base.textTheme.bodyMedium?.copyWith(
           color: darkScheme.onInverseSurface,
         ),
+      ),
+      bottomSheetTheme: base.bottomSheetTheme.copyWith(
+        backgroundColor: AppColors.surfaceGlassDark,
+        shadowColor: AppColors.accentGlowDark,
+      ),
+      dialogTheme: base.dialogTheme.copyWith(
+        backgroundColor: AppColors.surfaceGlassDark,
+        shadowColor: AppColors.accentGlowDark,
       ),
     );
   }

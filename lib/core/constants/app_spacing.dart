@@ -1,7 +1,8 @@
 class AppSpacing {
   AppSpacing._();
 
-  // Spacing (8pt grid)
+  // Spacing (2026 — grille musicale, multiples de 4)
+  static const double space2 = 2;
   static const double space4 = 4;
   static const double space8 = 8;
   static const double space12 = 12;
@@ -12,6 +13,8 @@ class AppSpacing {
   static const double space40 = 40;
   static const double space48 = 48;
   static const double space64 = 64;
+  static const double space80 = 80;
+  static const double space96 = 96;
 
   // Alias for backwards compat
   static const double xs = space4;
@@ -23,11 +26,15 @@ class AppSpacing {
   static const double xxxl = space32;
   static const double huge = space48;
 
-  // Border radius
+  // Border radius 2026 — "Morphologie organique"
+  static const double radius4 = 4;
   static const double radius8 = 8;
   static const double radius12 = 12;
   static const double radius16 = 16;
   static const double radius20 = 20;
+  static const double radius24 = 24;
+  static const double radius28 = 28;
+  static const double radiusApple = 44;
   static const double radiusFull = 999;
 
   // Alias for backwards compat
@@ -35,11 +42,13 @@ class AppSpacing {
   static const double radiusMd = radius12;
   static const double radiusLg = radius16;
 
-  // Animation durations
-  static const Duration durationMicro = Duration(milliseconds: 150);
-  static const Duration durationFast = Duration(milliseconds: 200);
-  static const Duration durationNormal = Duration(milliseconds: 300);
-  static const Duration durationSlow = Duration(milliseconds: 400);
+  // Animation durations 2026 — "Rythme respiratoire"
+  static const Duration durationMicro = Duration(milliseconds: 100);
+  static const Duration durationFast = Duration(milliseconds: 150);
+  static const Duration durationNormal = Duration(milliseconds: 250);
+  static const Duration durationSlow = Duration(milliseconds: 350);
+  static const Duration durationCinematic = Duration(milliseconds: 500);
+  static const Duration durationAmbient = Duration(milliseconds: 3000);
 
   // Touch targets (56dp minimum for Gabon market)
   static const double touchMin = 56;

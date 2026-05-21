@@ -87,4 +87,23 @@ class AppColors {
   static const Color mtnMoney = Color(0xFFFFCC00);
   static const Color airtelMoney = Color(0xFFED1C24);
   static const Color cardGeneric = Color(0xFF6366F1);
+
+  // 2026 — Glass Surface / Glassmorphism
+  static const Color surfaceGlass = Color(0xB8FFFFFF); // rgba(255,255,255,0.72)
+  static const Color surfaceGlassDark = Color(0xA31C1917); // rgba(28,25,23,0.64)
+  static const Color surfaceGlassBorder = Color(0x3DFFFFFF); // rgba(255,255,255,0.24)
+  static const Color surfaceGlassBorderDark = Color(0x14FFFFFF); // rgba(255,255,255,0.08)
+
+  // 2026 — Accent Glow
+  static const Color accentGlow = Color(0x291B5E3F); // rgba(27,94,63,0.16)
+  static const Color accentGlowSecondary = Color(0x33E8913A); // rgba(232,145,58,0.20)
+  static const Color accentGlowTertiary = Color(0x298D6E63); // rgba(141,110,99,0.16)
+  static const Color accentGlowDark = Color(0x1F34D399); // rgba(52,211,153,0.12)
+
+  // 2026 — États émotionnels
+  static const Color emotionSuccess = Color(0xFF10B981);
+  static const Color emotionWarning = Color(0xFFF59E0B);
+  static const Color emotionError = Color(0xFFEF4444);
+  static const Color emotionInfo = Color(0xFF3B82F6);
+  static const Color emotionCelebration = Color(0xFFFBBF24);
 }

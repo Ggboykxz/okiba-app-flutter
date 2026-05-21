@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constants/app_spacing.dart';
+import '../constants/app_animations.dart';
 
 class AnimatedListItem extends StatelessWidget {
   final Widget child;
@@ -21,12 +22,12 @@ class AnimatedListItem extends StatelessWidget {
     return TweenAnimationBuilder<double>(
       tween: Tween(begin: 0.0, end: 1.0),
       duration: duration,
-      curve: Curves.easeOut,
+      curve: AppAnimations.easeOutQuart,
       builder: (context, value, child) {
         return Opacity(
           opacity: value.clamp(0.0, 1.0),
           child: Transform.translate(
-            offset: Offset(0, (1 - value) * 16),
+            offset: Offset(0, (1 - value) * 40),
             child: child,
           ),
         );
