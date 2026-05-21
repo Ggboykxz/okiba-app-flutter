@@ -15,7 +15,7 @@
 - **All tests passed** — tests unitaires OK
 - **i18n complète** — FR/EN, 430+ clés ARB, tous les écrans migrés
 - **Assets intégrés** — 6 widgets réutilisables, 130+ placeholders
-- **Build APK bloqué** — espace disque insuffisant
+- **Build APK** ✅ `flutter build apk --debug` — réussi
 
 ---
 
