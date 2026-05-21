@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../widgets/product_card.dart';
 
@@ -18,7 +18,7 @@ class CategoryProductsScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(AppLocalizations.of(context)!.category_products_title(categoryId)),
+        title: Text(AppLocalizations.of(context).category_products_title(categoryId)),
       ),
       body: SafeArea(
         child: GridView.builder(

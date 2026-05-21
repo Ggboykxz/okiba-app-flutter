@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/navigation/route_names.dart';
 
@@ -50,7 +50,7 @@ class _CheckoutDeliveryScreenState extends State<CheckoutDeliveryScreen> {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(AppLocalizations.of(context)!.checkout_delivery_mode),
+        title: Text(AppLocalizations.of(context).checkout_delivery_mode),
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.space16),

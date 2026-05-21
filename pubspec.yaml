@@ -31,6 +31,7 @@ dependencies:
   image_picker: ^1.1.2
   share_plus: ^12.0.2
   url_launcher: ^6.3.0
+  cached_network_image: ^3.4.1
   connectivity_plus: ^7.1.1
   flutter_localizations:
     sdk: flutter
@@ -43,5 +44,170 @@ dev_dependencies:
 flutter:
   generate: true
   uses-material-design: true
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter/Inter-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Inter/Inter-ExtraBold.ttf
+          weight: 800
+
   assets:
-    - assets/logo/
+    # Logo
+    - assets/logo/okiba_mark.svg
+    - assets/logo/okiba_logo_horizontal.svg
+    - assets/logo/okiba_logo_vertical.svg
+    - assets/logo/okiba_app_icon.svg
+    - assets/logo/okiba_app_icon_dark.svg
+    - assets/logo/okiba_mark_monochrome.svg
+
+    # Animations Lottie
+    - assets/animations/splash_success.json
+    - assets/animations/payment_success.json
+    - assets/animations/loading_dots.json
+    - assets/animations/empty_state.json
+    - assets/animations/error_state.json
+    - assets/animations/order_delivered.json
+    - assets/animations/new_message.json
+    - assets/animations/driver_arriving.json
+
+    # Icônes — Tab Bar
+    - assets/icons/tab/home.svg
+    - assets/icons/tab/home_filled.svg
+    - assets/icons/tab/search.svg
+    - assets/icons/tab/search_filled.svg
+    - assets/icons/tab/sell.svg
+    - assets/icons/tab/sell_filled.svg
+    - assets/icons/tab/cart.svg
+    - assets/icons/tab/cart_filled.svg
+    - assets/icons/tab/profile.svg
+    - assets/icons/tab/profile_filled.svg
+
+    # Icônes — Catégories
+    - assets/icons/category/fashion.svg
+    - assets/icons/category/electronics.svg
+    - assets/icons/category/home_goods.svg
+    - assets/icons/category/auto.svg
+    - assets/icons/category/services.svg
+    - assets/icons/category/beauty.svg
+    - assets/icons/category/sports.svg
+    - assets/icons/category/food.svg
+
+    # Icônes — Paiement
+    - assets/icons/payment/orange_money.svg
+    - assets/icons/payment/mtn_momo.svg
+    - assets/icons/payment/airtel_money.svg
+    - assets/icons/payment/cash.svg
+    - assets/icons/payment/card.svg
+
+    # Icônes — Statuts
+    - assets/icons/status/pending.svg
+    - assets/icons/status/confirmed.svg
+    - assets/icons/status/preparing.svg
+    - assets/icons/status/ready.svg
+    - assets/icons/status/in_transit.svg
+    - assets/icons/status/delivered.svg
+    - assets/icons/status/cancelled.svg
+
+    # Icônes — Livraison
+    - assets/icons/delivery/motorcycle.svg
+    - assets/icons/delivery/car.svg
+    - assets/icons/delivery/pickup.svg
+    - assets/icons/delivery/dropoff.svg
+    - assets/icons/delivery/qr_scan.svg
+    - assets/icons/delivery/navigation.svg
+    - assets/icons/delivery/location_pin.svg
+
+    # Icônes — Divers
+    - assets/icons/misc/whatsapp.svg
+    - assets/icons/misc/share.svg
+    - assets/icons/misc/copy_link.svg
+    - assets/icons/misc/voice_input.svg
+    - assets/icons/misc/camera.svg
+    - assets/icons/misc/gallery.svg
+    - assets/icons/misc/filter.svg
+    - assets/icons/misc/sort.svg
+    - assets/icons/misc/heart.svg
+    - assets/icons/misc/heart_filled.svg
+    - assets/icons/misc/star.svg
+    - assets/icons/misc/star_half.svg
+    - assets/icons/misc/star_outline.svg
+    - assets/icons/misc/check.svg
+    - assets/icons/misc/close.svg
+    - assets/icons/misc/arrow_back.svg
+    - assets/icons/misc/arrow_forward.svg
+    - assets/icons/misc/arrow_down.svg
+    - assets/icons/misc/arrow_up.svg
+    - assets/icons/misc/more_vert.svg
+    - assets/icons/misc/edit.svg
+    - assets/icons/misc/delete.svg
+    - assets/icons/misc/add.svg
+    - assets/icons/misc/remove.svg
+    - assets/icons/misc/notification.svg
+    - assets/icons/misc/notification_badge.svg
+    - assets/icons/misc/settings.svg
+    - assets/icons/misc/help.svg
+    - assets/icons/misc/logout.svg
+    - assets/icons/misc/dark_mode.svg
+    - assets/icons/misc/light_mode.svg
+    - assets/icons/misc/wifi_off.svg
+    - assets/icons/misc/refresh.svg
+    - assets/icons/misc/send.svg
+    - assets/icons/misc/attach.svg
+    - assets/icons/misc/mic.svg
+    - assets/icons/misc/mic_off.svg
+    - assets/icons/misc/play.svg
+    - assets/icons/misc/pause.svg
+    - assets/icons/misc/map.svg
+    - assets/icons/misc/list.svg
+    - assets/icons/misc/grid.svg
+    - assets/icons/misc/calendar.svg
+    - assets/icons/misc/clock.svg
+    - assets/icons/misc/truck.svg
+    - assets/icons/misc/package.svg
+    - assets/icons/misc/shield.svg
+    - assets/icons/misc/verified.svg
+    - assets/icons/misc/badge_bronze.svg
+    - assets/icons/misc/badge_silver.svg
+    - assets/icons/misc/badge_gold.svg
+    - assets/icons/misc/badge_platinum.svg
+
+    # Images — Onboarding
+    - assets/images/onboarding/onboarding_1.png
+    - assets/images/onboarding/onboarding_2.png
+    - assets/images/onboarding/onboarding_3.png
+    - assets/images/onboarding/onboarding_4.png
+
+    # Images — Empty States
+    - assets/images/empty_states/empty_cart.png
+    - assets/images/empty_states/empty_orders.png
+    - assets/images/empty_states/empty_search.png
+    - assets/images/empty_states/empty_notifications.png
+    - assets/images/empty_states/empty_chat.png
+    - assets/images/empty_states/empty_favorites.png
+    - assets/images/empty_states/empty_products.png
+    - assets/images/empty_states/empty_delivery.png
+
+    # Images — Erreurs
+    - assets/images/errors/error_network.png
+    - assets/images/errors/error_server.png
+    - assets/images/errors/error_not_found.png
+    - assets/images/errors/error_generic.png
+
+    # Images — Illustrations
+    - assets/images/illustrations/payment_success.png
+    - assets/images/illustrations/order_confirmed.png
+    - assets/images/illustrations/kyc_verified.png
+    - assets/images/illustrations/welcome_hero.png
+    - assets/images/illustrations/support_hero.png
+
+    # Images — Backgrounds
+    - assets/images/backgrounds/pattern_kente.png
+    - assets/images/backgrounds/pattern_geometric.png

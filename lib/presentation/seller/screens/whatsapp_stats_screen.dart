@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/constants/app_colors.dart';
 
@@ -8,14 +8,14 @@ class WhatsAppStatsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.sellerWhatsappStatsTitle),
+        title: Text(l10n.seller_whatsapp_stats_title),
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.space16),
@@ -56,17 +56,17 @@ class WhatsAppStatsScreen extends StatelessWidget {
           // Main stats cards
           Row(
             children: [
-              _bigStat(l10n.sellerWhatsappViews, '1 247', Icons.visibility_rounded, AppColors.primary, colorScheme, textTheme),
+              _bigStat(l10n.seller_whatsapp_views, '1 247', Icons.visibility_rounded, AppColors.primary, colorScheme, textTheme),
               const SizedBox(width: AppSpacing.space12),
-              _bigStat(l10n.sellerWhatsappClicks, '389', Icons.touch_app_rounded, AppColors.secondary, colorScheme, textTheme),
+              _bigStat(l10n.seller_whatsapp_clicks, '389', Icons.touch_app_rounded, AppColors.secondary, colorScheme, textTheme),
             ],
           ),
           const SizedBox(height: AppSpacing.space12),
           Row(
             children: [
-              _bigStat(l10n.sellerWhatsappOrdersCount, '43', Icons.shopping_bag_rounded, AppColors.whatsapp, colorScheme, textTheme),
+              _bigStat(l10n.seller_whatsapp_orders_count, '43', Icons.shopping_bag_rounded, AppColors.whatsapp, colorScheme, textTheme),
               const SizedBox(width: AppSpacing.space12),
-              _bigStat(l10n.sellerWhatsappSales, '542 500 FCFA', Icons.trending_up_rounded, colorScheme.primary, colorScheme, textTheme),
+              _bigStat(l10n.seller_whatsapp_sales, '542 500 FCFA', Icons.trending_up_rounded, colorScheme.primary, colorScheme, textTheme),
             ],
           ),
           const SizedBox(height: AppSpacing.space24),
@@ -77,7 +77,7 @@ class WhatsAppStatsScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(l10n.sellerWhatsappConversionRate, style: textTheme.titleMedium),
+                  Text(l10n.seller_whatsapp_conversion_rate, style: textTheme.titleMedium),
                   const SizedBox(height: AppSpacing.space12),
                   Row(
                     children: [
@@ -100,7 +100,7 @@ class WhatsAppStatsScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: AppSpacing.space8),
-                  Text('43 ${l10n.sellerWhatsappOrdersCount?.toLowerCase() ?? ''} ${l10n.generalSeeAll?.toLowerCase() ?? ''} 389 ${l10n.sellerWhatsappClicks?.toLowerCase() ?? ''}',
+                  Text('43 ${l10n.seller_whatsapp_orders_count.toLowerCase()} ${l10n.general_see_all.toLowerCase()} 389 ${l10n.seller_whatsapp_clicks.toLowerCase()}',
                     style: textTheme.bodySmall?.copyWith(color: colorScheme.onSurfaceVariant)),
                 ],
               ),
@@ -108,7 +108,7 @@ class WhatsAppStatsScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space16),
           // Products ranking
-          Text(l10n.sellerWhatsappTopProducts, style: textTheme.titleMedium),
+          Text(l10n.seller_whatsapp_top_products, style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space12),
           ...List.generate(5, (i) {
             return Card(
@@ -119,8 +119,8 @@ class WhatsAppStatsScreen extends StatelessWidget {
                   child: Text('${i + 1}', style: textTheme.titleSmall?.copyWith(color: colorScheme.onSurfaceVariant)),
                 ),
                 title: Text(['Chemise traditionnelle', 'Poulet braisé', 'Meuble salon', 'Sac en cuir', 'Parfum'][i]),
-                subtitle: Text('${[156, 98, 67, 45, 34][i]} ${l10n.sellerWhatsappViews?.toLowerCase() ?? ''}'),
-                trailing: Text('${[12, 8, 3, 5, 2][i]} ${l10n.sellerWhatsappSales?.toLowerCase() ?? ''}', style: textTheme.titleSmall?.copyWith(
+                subtitle: Text('${[156, 98, 67, 45, 34][i]} ${l10n.seller_whatsapp_views.toLowerCase()}'),
+                trailing: Text('${[12, 8, 3, 5, 2][i]} ${l10n.seller_whatsapp_sales.toLowerCase()}', style: textTheme.titleSmall?.copyWith(
                   color: colorScheme.primary, fontWeight: FontWeight.w700,
                 )),
               ),

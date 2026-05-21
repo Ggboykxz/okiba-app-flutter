@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
 import '../widgets/category_chip.dart';
@@ -105,7 +105,7 @@ class ClientHomeScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () => context.push(RoutePaths.search),
-                    child: Text(AppLocalizations.of(context)!.general_see_all),
+                    child: Text(AppLocalizations.of(context).general_see_all),
                   ),
                 ],
               ),
@@ -153,7 +153,7 @@ class ClientHomeScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {},
-                    child: Text(AppLocalizations.of(context)!.general_see_all),
+                    child: Text(AppLocalizations.of(context).general_see_all),
                   ),
                 ],
               ),

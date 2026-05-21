@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/constants/app_spacing.dart';
+import '../../../core/widgets/empty_state_image.dart';
 
 class EmptyStateScreen extends StatelessWidget {
+  final EmptyStateType type;
   final String title;
   final String? subtitle;
   final String? actionLabel;
   final VoidCallback? onAction;
-  final IconData? icon;
 
   const EmptyStateScreen({
     super.key,
+    required this.type,
     required this.title,
     this.subtitle,
     this.actionLabel,
     this.onAction,
-    this.icon,
   });
 
   @override
@@ -30,19 +30,8 @@ class EmptyStateScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  'assets/logo/okiba_mark_monochrome.svg',
-                  width: 80,
-                  colorFilter: ColorFilter.mode(
-                    colorScheme.onSurfaceVariant.withValues(alpha: 0.3),
-                    BlendMode.srcIn,
-                  ),
-                ),
+                EmptyStateImage(type: type, size: 120),
                 const SizedBox(height: AppSpacing.space24),
-                if (icon != null) ...[
-                  Icon(icon!, size: 48, color: colorScheme.onSurfaceVariant),
-                  const SizedBox(height: AppSpacing.space16),
-                ],
                 Text(
                   title,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(

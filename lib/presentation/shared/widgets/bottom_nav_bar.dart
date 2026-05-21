@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_spacing.dart';
+import '../../../core/widgets/okiba_icon.dart';
 
 enum AppNavTab {
-  home(Icons.home_outlined, Icons.home, 'Accueil'),
-  search(Icons.search_outlined, Icons.search, 'Recherche'),
-  sell(Icons.add_circle_outline, Icons.add_circle, 'Vendre'),
-  cart(Icons.shopping_cart_outlined, Icons.shopping_cart, 'Panier'),
-  profile(Icons.person_outline, Icons.person, 'Profil');
+  home('home', 'Accueil'),
+  search('search', 'Recherche'),
+  sell('sell', 'Vendre'),
+  cart('cart', 'Panier'),
+  profile('profile', 'Profil');
 
-  final IconData outlineIcon;
-  final IconData filledIcon;
+  final String iconName;
   final String label;
 
-  const AppNavTab(this.outlineIcon, this.filledIcon, this.label);
+  const AppNavTab(this.iconName, this.label);
 }
 
 class BottomNavBar extends StatelessWidget {
@@ -69,9 +69,19 @@ class BottomNavBar extends StatelessWidget {
                         cartItemCount.toString(),
                         style: const TextStyle(fontSize: 10),
                       ),
-                      child: Icon(isSelected ? tab.filledIcon : tab.outlineIcon),
+                      child: OkibaIcon(
+                        name: tab.iconName,
+                        category: IconCategory.tab,
+                        filled: isSelected,
+                        color: isSelected ? colorScheme.primary : colorScheme.onSurfaceVariant,
+                      ),
                     )
-                  : Icon(isSelected ? tab.filledIcon : tab.outlineIcon);
+                  : OkibaIcon(
+                      name: tab.iconName,
+                      category: IconCategory.tab,
+                      filled: isSelected,
+                      color: isSelected ? colorScheme.primary : colorScheme.onSurfaceVariant,
+                    );
               return BottomNavigationBarItem(icon: icon, label: tab.label);
             }).toList(),
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
 
@@ -19,7 +19,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
 
     final reasons = [
       l10n.profile_delete_account_not_using,
@@ -100,7 +100,7 @@ class _DeleteAccountScreenState extends State<DeleteAccountScreen> {
   }
 
   void _confirmDelete(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(

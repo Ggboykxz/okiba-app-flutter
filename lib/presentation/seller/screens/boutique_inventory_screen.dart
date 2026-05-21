@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class BoutiqueInventoryScreen extends StatefulWidget {
@@ -16,14 +16,14 @@ class _BoutiqueInventoryScreenState extends State<BoutiqueInventoryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.boutiqueInventoryTitle),
+        title: Text(l10n.boutique_inventory_title),
       ),
       body: Column(
         children: [
@@ -32,11 +32,11 @@ class _BoutiqueInventoryScreenState extends State<BoutiqueInventoryScreen> {
             padding: const EdgeInsets.all(AppSpacing.space16),
             child: Row(
               children: [
-                Expanded(child: _summaryCard(l10n.boutiqueInventoryTotal, '156', colorScheme.primary, colorScheme, textTheme)),
+                Expanded(child: _summaryCard(l10n.boutique_inventory_total, '156', colorScheme.primary, colorScheme, textTheme)),
                 const SizedBox(width: AppSpacing.space8),
-                Expanded(child: _summaryCard(l10n.boutiqueInventoryLow, '12', colorScheme.error, colorScheme, textTheme)),
+                Expanded(child: _summaryCard(l10n.boutique_inventory_low, '12', colorScheme.error, colorScheme, textTheme)),
                 const SizedBox(width: AppSpacing.space8),
-                Expanded(child: _summaryCard(l10n.boutiqueInventoryRupture, '3', Colors.orange, colorScheme, textTheme)),
+                Expanded(child: _summaryCard(l10n.boutique_inventory_rupture, '3', Colors.orange, colorScheme, textTheme)),
               ],
             ),
           ),
@@ -157,23 +157,23 @@ class _BoutiqueInventoryScreenState extends State<BoutiqueInventoryScreen> {
   }
 
   void _showAdjustDialog(BuildContext context, String productName) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final controller = TextEditingController();
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text('${l10n.boutiqueInventoryAdjust} — $productName'),
+        title: Text('${l10n.boutique_inventory_adjust} — $productName'),
         content: TextField(
           controller: controller,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
-            labelText: l10n.boutiqueInventoryNewStock,
-            hintText: l10n.boutiqueInventoryQuantity,
+            labelText: l10n.boutique_inventory_new_stock,
+            hintText: l10n.boutique_inventory_quantity,
           ),
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(l10n.generalCancel)),
-          FilledButton(onPressed: () { Navigator.pop(ctx); }, child: Text(l10n.boutiqueInventoryConfirm)),
+          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(l10n.general_cancel)),
+          FilledButton(onPressed: () { Navigator.pop(ctx); }, child: Text(l10n.boutique_inventory_confirm)),
         ],
       ),
     );

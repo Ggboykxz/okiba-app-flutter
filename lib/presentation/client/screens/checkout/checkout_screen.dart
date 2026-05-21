@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/navigation/route_names.dart';
+import '../../../../core/widgets/okiba_animation.dart';
 import '../../widgets/address_card.dart';
 import '../../widgets/payment_method_card.dart';
 
@@ -40,10 +41,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         ),
         title: Text(
           _currentStep == 0
-              ? AppLocalizations.of(context)!.checkout_address
+              ? AppLocalizations.of(context).checkout_address
               : _currentStep == 1
-                  ? AppLocalizations.of(context)!.checkout_payment
-                  : AppLocalizations.of(context)!.checkout_success,
+                  ? AppLocalizations.of(context).checkout_payment
+                  : AppLocalizations.of(context).checkout_success,
         ),
       ),
       body: Column(
@@ -173,7 +174,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             child: OutlinedButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.add_rounded),
-              label: Text('${AppLocalizations.of(context)!.general_add} ${AppLocalizations.of(context)!.checkout_address}'),
+              label: Text('${AppLocalizations.of(context).general_add} ${AppLocalizations.of(context).checkout_address}'),
             ),
           ),
         ),
@@ -200,7 +201,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           onTap: () => setState(() => _selectedPayment = 0),
           child: PaymentMethodCard(
             method: 'orange_money',
-            label: AppLocalizations.of(context)!.checkout_orange_money,
+            label: AppLocalizations.of(context).checkout_orange_money,
             icon: Icons.phone_android_rounded,
             iconColor: const Color(0xFFFF6B00),
             isSelected: _selectedPayment == 0,
@@ -211,7 +212,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           onTap: () => setState(() => _selectedPayment = 1),
           child: PaymentMethodCard(
             method: 'mtn_momo',
-            label: AppLocalizations.of(context)!.checkout_mtn_momo,
+            label: AppLocalizations.of(context).checkout_mtn_momo,
             icon: Icons.phone_android_rounded,
             iconColor: const Color(0xFFFFCC00),
             isSelected: _selectedPayment == 1,
@@ -222,7 +223,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           onTap: () => setState(() => _selectedPayment = 2),
           child: PaymentMethodCard(
             method: 'airtel_money',
-            label: AppLocalizations.of(context)!.checkout_airtel_money,
+            label: AppLocalizations.of(context).checkout_airtel_money,
             icon: Icons.phone_android_rounded,
             iconColor: const Color(0xFFED1C24),
             isSelected: _selectedPayment == 2,
@@ -233,7 +234,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           onTap: () => setState(() => _selectedPayment = 3),
           child: PaymentMethodCard(
             method: 'card',
-            label: AppLocalizations.of(context)!.checkout_card,
+            label: AppLocalizations.of(context).checkout_card,
             icon: Icons.credit_card_rounded,
             iconColor: const Color(0xFF6366F1),
             isSelected: _selectedPayment == 3,
@@ -244,7 +245,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           onTap: () => setState(() => _selectedPayment = 4),
           child: PaymentMethodCard(
             method: 'cash',
-            label: AppLocalizations.of(context)!.checkout_cash,
+            label: AppLocalizations.of(context).checkout_cash,
             icon: Icons.money_rounded,
             isSelected: _selectedPayment == 4,
             onTap: () {},
@@ -258,22 +259,13 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     return ListView(
       padding: const EdgeInsets.all(AppSpacing.space16),
       children: [
-        Container(
-          width: 80,
-          height: 80,
-          decoration: BoxDecoration(
-            color: colorScheme.primaryContainer,
-            shape: BoxShape.circle,
-          ),
-          child: Icon(
-            Icons.check_rounded,
-            size: 40,
-            color: colorScheme.onPrimaryContainer,
-          ),
+        OkibaAnimation(
+          type: AnimationType.paymentSuccess,
+          size: 120,
         ),
         const SizedBox(height: AppSpacing.space24),
           Text(
-            AppLocalizations.of(context)!.checkout_success,
+            AppLocalizations.of(context).checkout_success,
             style: textTheme.headlineMedium,
             textAlign: TextAlign.center,
           ),
@@ -292,28 +284,28 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             child: Column(
               children: [
                 _confirmationRow(
-                  AppLocalizations.of(context)!.checkout_review_items,
+                  AppLocalizations.of(context).checkout_review_items,
                   '3 articles',
                   textTheme,
                   colorScheme,
                 ),
                 const SizedBox(height: AppSpacing.space8),
                 _confirmationRow(
-                  AppLocalizations.of(context)!.checkout_review_payment,
+                  AppLocalizations.of(context).checkout_review_payment,
                   'Orange Money',
                   textTheme,
                   colorScheme,
                 ),
                 const SizedBox(height: AppSpacing.space8),
                 _confirmationRow(
-                  AppLocalizations.of(context)!.checkout_review_delivery,
+                  AppLocalizations.of(context).checkout_review_delivery,
                   '~ 2h',
                   textTheme,
                   colorScheme,
                 ),
                 const Divider(height: AppSpacing.space16),
                 _confirmationRow(
-                  AppLocalizations.of(context)!.order_total,
+                  AppLocalizations.of(context).order_total,
                   '77 500 FCFA',
                   textTheme,
                   colorScheme,
@@ -330,7 +322,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           child: OutlinedButton.icon(
             onPressed: () {},
             icon: const Icon(Icons.share_rounded),
-            label: Text(AppLocalizations.of(context)!.general_share),
+            label: Text(AppLocalizations.of(context).general_share),
           ),
         ),
       ],

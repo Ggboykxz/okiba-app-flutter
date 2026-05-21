@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/navigation/route_names.dart';
 
@@ -78,7 +78,7 @@ class OrderDetailScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space16),
           // Suivi
-          Text(AppLocalizations.of(context)!.order_tracking_title, style: textTheme.titleMedium),
+          Text(AppLocalizations.of(context).order_tracking_title, style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space12),
           Card(
             child: Padding(
@@ -86,14 +86,14 @@ class OrderDetailScreen extends StatelessWidget {
               child: Column(
                 children: [
                   _trackingStep(
-                    AppLocalizations.of(context)!.order_status_confirmed,
+                    AppLocalizations.of(context).order_status_confirmed,
                     '15 mai, 10h30',
                     true,
                     colorScheme,
                     textTheme,
                   ),
                   _trackingStep(
-                    AppLocalizations.of(context)!.order_status_preparing,
+                    AppLocalizations.of(context).order_status_preparing,
                     '15 mai, 11h00',
                     true,
                     colorScheme,
@@ -108,7 +108,7 @@ class OrderDetailScreen extends StatelessWidget {
                     isActive: true,
                   ),
                   _trackingStep(
-                    AppLocalizations.of(context)!.order_status_delivered,
+                    AppLocalizations.of(context).order_status_delivered,
                     null,
                     false,
                     colorScheme,
@@ -120,7 +120,7 @@ class OrderDetailScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Articles
-          Text(AppLocalizations.of(context)!.checkout_review_items, style: textTheme.titleMedium),
+          Text(AppLocalizations.of(context).checkout_review_items, style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space12),
           ...List.generate(3, (i) {
             return Card(
@@ -183,7 +183,7 @@ class OrderDetailScreen extends StatelessWidget {
           }),
           const SizedBox(height: AppSpacing.space24),
           // Récapitulatif
-          Text(AppLocalizations.of(context)!.checkout_summary, style: textTheme.titleMedium),
+          Text(AppLocalizations.of(context).checkout_summary, style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space12),
           Card(
             child: Padding(
@@ -198,21 +198,21 @@ class OrderDetailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSpacing.space8),
                   _summaryRow(
-                    AppLocalizations.of(context)!.checkout_review_delivery,
+                    AppLocalizations.of(context).checkout_review_delivery,
                     '2 000 FCFA',
                     textTheme,
                     colorScheme,
                   ),
                   const SizedBox(height: AppSpacing.space8),
                   _summaryRow(
-                    AppLocalizations.of(context)!.checkout_review_payment,
+                    AppLocalizations.of(context).checkout_review_payment,
                     'Orange Money',
                     textTheme,
                     colorScheme,
                   ),
                   const Divider(height: AppSpacing.space16),
                   _summaryRow(
-                    AppLocalizations.of(context)!.order_total,
+                    AppLocalizations.of(context).order_total,
                     '122 500 FCFA',
                     textTheme,
                     colorScheme,
@@ -224,7 +224,7 @@ class OrderDetailScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Adresse
-          Text(AppLocalizations.of(context)!.checkout_address, style: textTheme.titleMedium),
+          Text(AppLocalizations.of(context).checkout_address, style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space12),
           Card(
             child: Padding(
@@ -274,7 +274,7 @@ class OrderDetailScreen extends StatelessWidget {
                 RoutePaths.rateOrder.replaceAll(':id', orderId),
               ),
               icon: const Icon(Icons.star_rounded),
-              label: Text(AppLocalizations.of(context)!.order_rate_title),
+              label: Text(AppLocalizations.of(context).order_rate_title),
             ),
           ),
           const SizedBox(height: AppSpacing.space12),
@@ -286,7 +286,7 @@ class OrderDetailScreen extends StatelessWidget {
                 RoutePaths.dispute.replaceAll(':id', orderId),
               ),
               icon: const Icon(Icons.warning_amber_rounded),
-              label: Text(AppLocalizations.of(context)!.order_dispute_title),
+              label: Text(AppLocalizations.of(context).order_dispute_title),
             ),
           ),
           const SizedBox(height: AppSpacing.space16),

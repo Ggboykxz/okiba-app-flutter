@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../widgets/order_card.dart';
 
@@ -36,7 +36,7 @@ class _OrdersScreenState extends State<OrdersScreen>
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.profile_orders),
+        title: Text(AppLocalizations.of(context).profile_orders),
         bottom: TabBar(
           controller: _tabController,
           tabs: _tabs

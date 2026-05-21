@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
 import 'package:go_router/go_router.dart';
@@ -30,14 +30,14 @@ class _BoutiqueOrdersScreenState extends State<BoutiqueOrdersScreen> with Single
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.boutiqueOrdersTitle),
+        title: Text(l10n.boutique_orders_title),
         bottom: TabBar(
           controller: _tabController,
           isScrollable: true,

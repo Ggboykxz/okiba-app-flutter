@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class RapidPromotionsScreen extends StatefulWidget {
@@ -20,14 +20,14 @@ class _RapidPromotionsScreenState extends State<RapidPromotionsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.sellerRapidPromotionsTitle),
+        title: Text(l10n.seller_rapid_promotions_title),
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.space16),
@@ -50,11 +50,11 @@ class _RapidPromotionsScreenState extends State<RapidPromotionsScreen> {
                   children: [
                     Icon(Icons.lightbulb_rounded, color: colorScheme.onSecondary),
                     const SizedBox(width: AppSpacing.space8),
-                    Text(l10n.sellerRapidPromotionsBoost, style: textTheme.titleMedium?.copyWith(color: colorScheme.onSecondary)),
+                    Text(l10n.seller_rapid_promotions_boost, style: textTheme.titleMedium?.copyWith(color: colorScheme.onSecondary)),
                   ],
                 ),
                 const SizedBox(height: AppSpacing.space8),
-                Text(l10n.sellerRapidPromotionsBoostDesc,
+                Text(l10n.seller_rapid_promotions_boost_desc,
                   style: textTheme.bodySmall?.copyWith(color: colorScheme.onSecondary.withValues(alpha: 0.8))),
               ],
             ),
@@ -103,7 +103,7 @@ class _RapidPromotionsScreenState extends State<RapidPromotionsScreen> {
                           children: [
                             Icon(Icons.check_rounded, size: 14, color: colorScheme.primary),
                             const SizedBox(width: 4),
-                            Text(l10n.sellerRapidPromotionsActive, style: textTheme.labelSmall?.copyWith(color: colorScheme.primary, fontWeight: FontWeight.w600)),
+                            Text(l10n.seller_rapid_promotions_active, style: textTheme.labelSmall?.copyWith(color: colorScheme.primary, fontWeight: FontWeight.w600)),
                           ],
                         ),
                       )
@@ -120,7 +120,7 @@ class _RapidPromotionsScreenState extends State<RapidPromotionsScreen> {
   }
 
   void _showConfirmSheet(BuildContext context, _Promo promo) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     showModalBottomSheet(
       context: context,
       builder: (ctx) => Padding(
@@ -138,7 +138,7 @@ class _RapidPromotionsScreenState extends State<RapidPromotionsScreen> {
               width: double.infinity,
               child: FilledButton(
                 onPressed: () { Navigator.pop(ctx); },
-                child: Text(l10n.sellerRapidPromotionsActivate),
+                child: Text(l10n.seller_rapid_promotions_activate),
               ),
             ),
             const SizedBox(height: AppSpacing.space8),

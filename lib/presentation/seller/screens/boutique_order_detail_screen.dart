@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class BoutiqueOrderDetailScreen extends StatelessWidget {
@@ -8,16 +8,16 @@ class BoutiqueOrderDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     final timeline = [
-      (l10n.boutiqueOrderDetailPlaced, '12 mai 2026 à 14:30', true),
-      (l10n.boutiqueOrderDetailPaid, '12 mai 2026 à 14:32', true),
-      (l10n.boutiqueOrderDetailPreparing, '13 mai 2026 à 09:00', true),
-      (l10n.boutiqueOrderDetailInTransit, '14 mai 2026 à 10:15', false),
-      (l10n.orderStatusDelivered, '—', false),
+      (l10n.boutique_order_detail_placed, '12 mai 2026 à 14:30', true),
+      (l10n.boutique_order_detail_paid, '12 mai 2026 à 14:32', true),
+      (l10n.boutique_order_detail_preparing, '13 mai 2026 à 09:00', true),
+      (l10n.boutique_order_detail_in_transit, '14 mai 2026 à 10:15', false),
+      (l10n.order_status_delivered, '—', false),
     ];
 
     return Scaffold(
@@ -62,7 +62,7 @@ class BoutiqueOrderDetailScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(l10n.boutiqueOrderDetailItems, style: textTheme.titleMedium),
+                  Text(l10n.boutique_order_detail_items, style: textTheme.titleMedium),
                   const SizedBox(height: AppSpacing.space12),
                   _productRow('Chemise wax', '15 000 FCFA', '×1', colorScheme, textTheme),
                   const Divider(),
@@ -71,7 +71,7 @@ class BoutiqueOrderDetailScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(l10n.boutiqueOrderDetailTotal, style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700)),
+                      Text(l10n.boutique_order_detail_total, style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700)),
                       Text('65 000 FCFA', style: textTheme.titleMedium?.copyWith(color: colorScheme.primary, fontWeight: FontWeight.w700)),
                     ],
                   ),
@@ -85,20 +85,20 @@ class BoutiqueOrderDetailScreen extends StatelessWidget {
             child: ListTile(
               leading: Icon(Icons.payment_rounded, color: colorScheme.primary),
               title: const Text('Orange Money'),
-              subtitle: Text(l10n.boutiqueOrderDetailPaid),
+              subtitle: Text(l10n.boutique_order_detail_paid),
               trailing: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
                   color: Colors.green.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(AppSpacing.radiusFull),
                 ),
-                child: Text(l10n.boutiqueOrderDetailPaidStatus, style: const TextStyle(color: Colors.green, fontSize: 12, fontWeight: FontWeight.w600)),
+                child: Text(l10n.boutique_order_detail_paid_status, style: const TextStyle(color: Colors.green, fontSize: 12, fontWeight: FontWeight.w600)),
               ),
             ),
           ),
           const SizedBox(height: AppSpacing.space24),
           // Timeline
-          Text(l10n.boutiqueOrderDetailTracking, style: textTheme.titleLarge),
+          Text(l10n.boutique_order_detail_tracking, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           ...timeline.asMap().entries.map((e) {
             return Row(
@@ -147,7 +147,7 @@ class BoutiqueOrderDetailScreen extends StatelessWidget {
               Expanded(
                 child: OutlinedButton.icon(
                   icon: const Icon(Icons.check_rounded),
-                  label: Text(l10n.boutiqueOrderDetailConfirm),
+                  label: Text(l10n.boutique_order_detail_confirm),
                   onPressed: () {},
                 ),
               ),
@@ -155,7 +155,7 @@ class BoutiqueOrderDetailScreen extends StatelessWidget {
               Expanded(
                 child: FilledButton.icon(
                   icon: const Icon(Icons.local_shipping_rounded),
-                  label: Text(l10n.boutiqueOrderDetailShip),
+                  label: Text(l10n.boutique_order_detail_ship),
                   onPressed: () {},
                 ),
               ),
@@ -164,7 +164,7 @@ class BoutiqueOrderDetailScreen extends StatelessWidget {
           const SizedBox(height: AppSpacing.space16),
           OutlinedButton.icon(
             icon: const Icon(Icons.cancel_outlined),
-            label: Text(l10n.boutiqueOrderDetailCancelOrder),
+            label: Text(l10n.boutique_order_detail_cancel_order),
             style: OutlinedButton.styleFrom(foregroundColor: colorScheme.error),
             onPressed: () {},
           ),

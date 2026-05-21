@@ -186,6 +186,10 @@ class AppLocalizationsFr extends AppLocalizations {
       'Un code de réinitialisation vous sera envoyé par SMS.';
 
   @override
+  String get auth_sms_info =>
+      'Vous recevrez un SMS pour confirmer votre numéro.';
+
+  @override
   String get auth_new_password_title => 'Nouveau mot de passe';
 
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -9,14 +9,14 @@ class RapidDashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.sellerRapidTitle),
+        title: Text(l10n.seller_rapid_title),
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.space16),
@@ -39,14 +39,14 @@ class RapidDashboardScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  l10n.sellerRapidPublish,
+                  l10n.seller_rapid_publish,
                   style: textTheme.titleLarge?.copyWith(
                     color: colorScheme.onPrimary,
                   ),
                 ),
                 const SizedBox(height: AppSpacing.space8),
                 Text(
-                  l10n.sellerRapidDesc,
+                  l10n.seller_rapid_desc,
                   style: textTheme.bodyMedium?.copyWith(
                     color: colorScheme.onPrimary.withValues(alpha: 0.8),
                   ),
@@ -57,7 +57,7 @@ class RapidDashboardScreen extends StatelessWidget {
                   child: ElevatedButton.icon(
                     onPressed: () => context.push(RoutePaths.rapidPublish),
                     icon: const Icon(Icons.add_a_photo_rounded),
-                    label: Text(l10n.sellerRapidPostAd),
+                    label: Text(l10n.seller_rapid_post_ad),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: colorScheme.onPrimary,
                       foregroundColor: colorScheme.primary,
@@ -72,25 +72,25 @@ class RapidDashboardScreen extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: _actionCard(l10n.sellerRapidPromotionsTitle, Icons.local_offer_rounded, colorScheme.secondary, colorScheme, textTheme, () => context.push(RoutePaths.rapidPromotions)),
+                child: _actionCard(l10n.seller_rapid_promotions_title, Icons.local_offer_rounded, colorScheme.secondary, colorScheme, textTheme, () => context.push(RoutePaths.rapidPromotions)),
               ),
               const SizedBox(width: AppSpacing.space8),
               Expanded(
-                child: _actionCard(l10n.sellerRapidFlashTitle, Icons.timer_rounded, Colors.deepOrange, colorScheme, textTheme, () => context.push(RoutePaths.rapidFlashSales)),
+                child: _actionCard(l10n.seller_rapid_flash_title, Icons.timer_rounded, Colors.deepOrange, colorScheme, textTheme, () => context.push(RoutePaths.rapidFlashSales)),
               ),
               const SizedBox(width: AppSpacing.space8),
               Expanded(
-                child: _actionCard(l10n.sellerRapidMessages, Icons.chat_rounded, colorScheme.tertiary, colorScheme, textTheme, () => context.push(RoutePaths.rapidMessages)),
+                child: _actionCard(l10n.seller_rapid_messages, Icons.chat_rounded, colorScheme.tertiary, colorScheme, textTheme, () => context.push(RoutePaths.rapidMessages)),
               ),
               const SizedBox(width: AppSpacing.space8),
               Expanded(
-                child: _actionCard(l10n.sellerRapidAnalyticsTitle, Icons.analytics_rounded, colorScheme.primary, colorScheme, textTheme, () => context.push(RoutePaths.rapidAnalytics)),
+                child: _actionCard(l10n.seller_rapid_analytics_title, Icons.analytics_rounded, colorScheme.primary, colorScheme, textTheme, () => context.push(RoutePaths.rapidAnalytics)),
               ),
             ],
           ),
           const SizedBox(height: AppSpacing.space24),
           // Mes annonces actives
-          Text(l10n.sellerRapidActiveAds, style: textTheme.titleLarge),
+          Text(l10n.seller_rapid_active_ads, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           _listingCard(
             'iPhone 13 reconditionné',
@@ -127,19 +127,19 @@ class RapidDashboardScreen extends StatelessWidget {
             child: OutlinedButton.icon(
               onPressed: () => context.push(RoutePaths.rapidFeed),
               icon: const Icon(Icons.explore_rounded),
-              label: Text(l10n.sellerRapidExploreFeed),
+              label: Text(l10n.seller_rapid_explore_feed),
             ),
           ),
           const SizedBox(height: AppSpacing.space24),
           // Statistiques
-          Text(l10n.sellerRapidTotalViews, style: textTheme.titleLarge),
+          Text(l10n.seller_rapid_total_views, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           Row(
             children: [
               Expanded(
                 child: _statBox(
                   '3',
-                  l10n.sellerRapidActiveAds,
+                  l10n.seller_rapid_active_ads,
                   Icons.dashboard_rounded,
                   colorScheme.primary,
                   colorScheme,
@@ -150,7 +150,7 @@ class RapidDashboardScreen extends StatelessWidget {
               Expanded(
                 child: _statBox(
                   '80',
-                  l10n.sellerRapidTotalViews,
+                  l10n.seller_rapid_total_views,
                   Icons.visibility_rounded,
                   colorScheme.secondary,
                   colorScheme,
@@ -161,7 +161,7 @@ class RapidDashboardScreen extends StatelessWidget {
               Expanded(
                 child: _statBox(
                   '5',
-                  l10n.sellerRapidMessages,
+                  l10n.seller_rapid_messages,
                   Icons.chat_rounded,
                   colorScheme.tertiary,
                   colorScheme,

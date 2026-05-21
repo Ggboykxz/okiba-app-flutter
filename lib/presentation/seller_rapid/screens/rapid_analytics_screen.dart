@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class RapidAnalyticsScreen extends StatefulWidget {
@@ -16,14 +16,14 @@ class _RapidAnalyticsScreenState extends State<RapidAnalyticsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.sellerRapidAnalyticsTitle),
+        title: Text(l10n.seller_rapid_analytics_title),
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.space16),
@@ -62,22 +62,22 @@ class _RapidAnalyticsScreenState extends State<RapidAnalyticsScreen> {
           // Stats
           Row(
             children: [
-              Expanded(child: _statCard(l10n.sellerRapidAnalyticsAds, '12', Icons.dashboard_rounded, colorScheme.primary, colorScheme, textTheme)),
+              Expanded(child: _statCard(l10n.seller_rapid_analytics_ads, '12', Icons.dashboard_rounded, colorScheme.primary, colorScheme, textTheme)),
               const SizedBox(width: AppSpacing.space12),
-              Expanded(child: _statCard(l10n.sellerRapidTotalViews, '1 245', Icons.visibility_rounded, colorScheme.secondary, colorScheme, textTheme)),
+              Expanded(child: _statCard(l10n.seller_rapid_total_views, '1 245', Icons.visibility_rounded, colorScheme.secondary, colorScheme, textTheme)),
             ],
           ),
           const SizedBox(height: AppSpacing.space12),
           Row(
             children: [
-              Expanded(child: _statCard(l10n.sellerRapidAnalyticsContacts, '28', Icons.chat_rounded, colorScheme.tertiary, colorScheme, textTheme)),
+              Expanded(child: _statCard(l10n.seller_rapid_analytics_contacts, '28', Icons.chat_rounded, colorScheme.tertiary, colorScheme, textTheme)),
               const SizedBox(width: AppSpacing.space12),
-              Expanded(child: _statCard(l10n.sellerRapidAnalyticsViewsPerAd, '104', Icons.analytics_rounded, colorScheme.primary, colorScheme, textTheme)),
+              Expanded(child: _statCard(l10n.seller_rapid_analytics_views_per_ad, '104', Icons.analytics_rounded, colorScheme.primary, colorScheme, textTheme)),
             ],
           ),
           const SizedBox(height: AppSpacing.space24),
           // Performance
-          Text(l10n.sellerRapidAnalyticsPerfTitle, style: textTheme.titleLarge),
+          Text(l10n.seller_rapid_analytics_perf_title, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           _perfRow('iPhone 13 reconditionné', '1 245 vues', '18 contacts', colorScheme, textTheme),
           _perfRow('Lit simple', '890 vues', '6 contacts', colorScheme, textTheme),
@@ -94,13 +94,13 @@ class _RapidAnalyticsScreenState extends State<RapidAnalyticsScreen> {
                     children: [
                       Icon(Icons.lightbulb_rounded, color: colorScheme.secondary, size: 20),
                       const SizedBox(width: AppSpacing.space8),
-                      Text(l10n.sellerRapidAnalyticsTipsTitle, style: textTheme.titleMedium),
+                      Text(l10n.seller_rapid_analytics_tips_title, style: textTheme.titleMedium),
                     ],
                   ),
                   const SizedBox(height: AppSpacing.space12),
-                  _tip(l10n.sellerRapidAnalyticsTipPhotos, colorScheme, textTheme),
-                  _tip(l10n.sellerRapidAnalyticsTipReply, colorScheme, textTheme),
-                  _tip(l10n.sellerRapidAnalyticsTipBoost, colorScheme, textTheme),
+                  _tip(l10n.seller_rapid_analytics_tip_photos, colorScheme, textTheme),
+                  _tip(l10n.seller_rapid_analytics_tip_reply, colorScheme, textTheme),
+                  _tip(l10n.seller_rapid_analytics_tip_boost, colorScheme, textTheme),
                 ],
               ),
             ),

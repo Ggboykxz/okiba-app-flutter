@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -9,14 +9,14 @@ class RapidFeedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.sellerRapidFeedTitle),
+        title: Text(l10n.seller_rapid_feed_title),
         actions: [
           IconButton(
             icon: const Icon(Icons.filter_list_rounded),
@@ -30,7 +30,7 @@ class RapidFeedScreen extends StatelessWidget {
           // Barre de recherche feed
           TextField(
             decoration: InputDecoration(
-              hintText: l10n.sellerRapidFeedSearch,
+              hintText: l10n.seller_rapid_feed_search,
               prefixIcon: const Icon(Icons.search_rounded),
               filled: true,
               fillColor: colorScheme.surfaceContainerHighest,
@@ -47,12 +47,12 @@ class RapidFeedScreen extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                _filterChip(l10n.sellerRapidFilterAll, true, colorScheme, textTheme),
-                _filterChip(l10n.sellerRapidFilterFashion, false, colorScheme, textTheme),
-                _filterChip(l10n.sellerRapidFilterTech, false, colorScheme, textTheme),
-                _filterChip(l10n.sellerRapidFilterHome, false, colorScheme, textTheme),
-                _filterChip(l10n.sellerRapidFilterServices, false, colorScheme, textTheme),
-                _filterChip(l10n.sellerRapidFilterFood, false, colorScheme, textTheme),
+                _filterChip(l10n.seller_rapid_filter_all, true, colorScheme, textTheme),
+                _filterChip(l10n.seller_rapid_filter_fashion, false, colorScheme, textTheme),
+                _filterChip(l10n.seller_rapid_filter_tech, false, colorScheme, textTheme),
+                _filterChip(l10n.seller_rapid_filter_home, false, colorScheme, textTheme),
+                _filterChip(l10n.seller_rapid_filter_services, false, colorScheme, textTheme),
+                _filterChip(l10n.seller_rapid_filter_food, false, colorScheme, textTheme),
               ],
             ),
           ),

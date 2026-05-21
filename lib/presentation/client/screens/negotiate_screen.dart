@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class NegotiateScreen extends StatefulWidget {
@@ -36,7 +36,7 @@ class _NegotiateScreenState extends State<NegotiateScreen> {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(AppLocalizations.of(context)!.product_negotiate),
+        title: Text(AppLocalizations.of(context).product_negotiate),
       ),
       body: SafeArea(
         child: Padding(
@@ -125,9 +125,9 @@ class _NegotiateScreenState extends State<NegotiateScreen> {
                 controller: _priceController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: AppLocalizations.of(context)!.checkout_negotiate_your_price,
+                  labelText: AppLocalizations.of(context).checkout_negotiate_your_price,
                   prefixIcon: const Icon(Icons.monetization_on_rounded),
-                  prefixText: '${AppLocalizations.of(context)!.currency_fcfa} ',
+                  prefixText: '${AppLocalizations.of(context).currency_fcfa} ',
                 ),
                 onChanged: (_) => setState(() => _selectedPreset = -1),
               ),
@@ -167,7 +167,7 @@ class _NegotiateScreenState extends State<NegotiateScreen> {
                         }
                       : null,
                   icon: const Icon(Icons.send_rounded),
-                  label: Text(AppLocalizations.of(context)!.general_submit),
+                  label: Text(AppLocalizations.of(context).general_submit),
                 ),
               ),
               const SizedBox(height: AppSpacing.space8),

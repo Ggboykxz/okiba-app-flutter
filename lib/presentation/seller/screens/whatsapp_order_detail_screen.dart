@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/constants/app_colors.dart';
@@ -11,7 +11,7 @@ class WhatsAppOrderDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
@@ -22,7 +22,7 @@ class WhatsAppOrderDetailScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(l10n.sellerWhatsappOrderDetail),
+        title: Text(l10n.seller_whatsapp_order_detail),
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.space16),
@@ -61,7 +61,7 @@ class WhatsAppOrderDetailScreen extends StatelessWidget {
                       color: colorScheme.surfaceContainerHighest,
                       borderRadius: BorderRadius.circular(AppSpacing.radiusFull),
                     ),
-                    child: Text(l10n.orderStatusPending, style: textTheme.labelSmall?.copyWith(
+                    child: Text(l10n.order_status_pending, style: textTheme.labelSmall?.copyWith(
                       color: colorScheme.onSurfaceVariant,
                     )),
                   ),
@@ -71,7 +71,7 @@ class WhatsAppOrderDetailScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Product
-          Text('${l10n.boutiqueOrderDetailItems} ${l10n.generalSeeAll?.toLowerCase() ?? ''}', style: textTheme.titleMedium),
+          Text('${l10n.boutique_order_detail_items} ${l10n.general_see_all.toLowerCase()}', style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space12),
           Card(
             child: Padding(
@@ -107,14 +107,14 @@ class WhatsAppOrderDetailScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Actions
-          Text(l10n.boutiqueActions, style: textTheme.titleMedium),
+          Text(l10n.boutique_actions, style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space12),
           SizedBox(
             width: double.infinity, height: AppSpacing.touchMin,
             child: ElevatedButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.check_rounded),
-              label: Text(l10n.sellerWhatsappOrderConfirm),
+              label: Text(l10n.seller_whatsapp_order_confirm),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.whatsapp,
                 foregroundColor: Colors.white,
@@ -127,7 +127,7 @@ class WhatsAppOrderDetailScreen extends StatelessWidget {
             child: OutlinedButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.chat_rounded),
-              label: Text(l10n.sellerWhatsappContactWhatsapp),
+              label: Text(l10n.seller_whatsapp_contact_whatsapp),
             ),
           ),
           const SizedBox(height: AppSpacing.space12),
@@ -136,7 +136,7 @@ class WhatsAppOrderDetailScreen extends StatelessWidget {
             child: OutlinedButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.delivery_dining_rounded),
-              label: Text(l10n.sellerWhatsappMarkDelivered),
+              label: Text(l10n.seller_whatsapp_mark_delivered),
             ),
           ),
           const SizedBox(height: AppSpacing.space12),
@@ -145,7 +145,7 @@ class WhatsAppOrderDetailScreen extends StatelessWidget {
             child: TextButton.icon(
               onPressed: () {},
               icon: Icon(Icons.cancel_outlined, color: colorScheme.error),
-              label: Text(l10n.sellerWhatsappCancelOrder, style: TextStyle(color: colorScheme.error)),
+              label: Text(l10n.seller_whatsapp_cancel_order, style: TextStyle(color: colorScheme.error)),
             ),
           ),
           const SizedBox(height: AppSpacing.space32),

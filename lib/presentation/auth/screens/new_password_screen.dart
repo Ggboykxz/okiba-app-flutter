@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_spacing.dart';
@@ -71,12 +71,12 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppLocalizations.of(context)!.authNewPasswordTitle,
+                  AppLocalizations.of(context).auth_new_password_title,
                   style: textTheme.headlineMedium,
                 ),
                 const SizedBox(height: AppSpacing.space8),
                 Text(
-                  AppLocalizations.of(context)!.authNewPasswordSubtitle,
+                  AppLocalizations.of(context).auth_new_password_subtitle,
                   style: textTheme.bodyLarge?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                   ),
@@ -86,7 +86,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                   controller: _passwordController,
                   obscureText: _obscurePassword,
                   decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context)!.authNewPasswordHint,
+                    labelText: AppLocalizations.of(context).auth_new_password_hint,
                     prefixIcon: const Icon(Icons.lock_rounded),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -100,7 +100,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                   onChanged: (_) => setState(() {}),
                   validator: (v) {
                     if (v == null || v.length < 8) {
-                      return AppLocalizations.of(context)!.authPasswordMinChars;
+                      return AppLocalizations.of(context).auth_password_min_chars;
                     }
                     return null;
                   },
@@ -120,7 +120,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                   controller: _confirmController,
                   obscureText: _obscureConfirm,
                   decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context)!.authConfirmPassword,
+                    labelText: AppLocalizations.of(context).auth_confirm_password,
                     prefixIcon: const Icon(Icons.lock_rounded),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -133,7 +133,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                   ),
                   validator: (v) {
                     if (v != _passwordController.text) {
-                      return AppLocalizations.of(context)!.authPasswordsNoMatch;
+                      return AppLocalizations.of(context).auth_passwords_no_match;
                     }
                     return null;
                   },
@@ -144,7 +144,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                   height: AppSpacing.touchMin,
                   child: ElevatedButton(
                     onPressed: _onSave,
-                    child: Text(AppLocalizations.of(context)!.generalSave),
+                    child: Text(AppLocalizations.of(context).general_save),
                   ),
                 ),
                 const SizedBox(height: AppSpacing.space8),

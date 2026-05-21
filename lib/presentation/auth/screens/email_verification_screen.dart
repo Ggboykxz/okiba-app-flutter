@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -72,13 +72,13 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
               ),
               const SizedBox(height: AppSpacing.space24),
               Text(
-                AppLocalizations.of(context)!.authEmailVerifyTitle,
+                AppLocalizations.of(context).auth_email_verify_title,
                 style: textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: AppSpacing.space12),
               Text(
-                AppLocalizations.of(context)!.authEmailVerifyDesc,
+                AppLocalizations.of(context).auth_email_verify_desc,
                 style: textTheme.bodyLarge?.copyWith(
                   color: colorScheme.onSurfaceVariant,
                 ),
@@ -92,7 +92,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                   onPressed: () {
                     context.go(RoutePaths.onboarding);
                   },
-                  child: Text(AppLocalizations.of(context)!.authEmailVerified),
+                  child: Text(AppLocalizations.of(context).auth_email_verified),
                 ),
               ),
               const SizedBox(height: AppSpacing.space16),
@@ -101,8 +101,8 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                 children: [
                   Text(
                     _canResend
-                        ? '${AppLocalizations.of(context)!.authEmailNotReceived}'
-                        : AppLocalizations.of(context)!.authResendIn(_timerSeconds.toString()),
+                        ? AppLocalizations.of(context).auth_email_not_received
+                        : AppLocalizations.of(context).auth_resend_in(_timerSeconds.toString()),
                     style: textTheme.bodyMedium?.copyWith(
                       color: colorScheme.onSurfaceVariant,
                     ),
@@ -110,7 +110,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                   GestureDetector(
                     onTap: _canResend ? _startTimer : null,
                     child: Text(
-                      AppLocalizations.of(context)!.authResend,
+                      AppLocalizations.of(context).auth_resend,
                       style: textTheme.labelLarge?.copyWith(
                         color: _canResend
                             ? colorScheme.primary

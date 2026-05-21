@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../widgets/product_card.dart';
 
@@ -11,7 +11,7 @@ class FavoritesScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.order_favorites_title),
+        title: Text(AppLocalizations.of(context).order_favorites_title),
         actions: [
           TextButton(
             onPressed: () {},

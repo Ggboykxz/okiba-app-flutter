@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -10,14 +10,14 @@ class RapidProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.sellerRapidProductDetailTitle),
+        title: Text(l10n.seller_rapid_product_detail_title),
         actions: [
           IconButton(
             icon: const Icon(Icons.share_rounded),
@@ -66,7 +66,7 @@ class RapidProductDetailScreen extends StatelessWidget {
                   color: colorScheme.primaryContainer,
                   borderRadius: BorderRadius.circular(AppSpacing.radiusFull),
                 ),
-                child: Text(l10n.sellerRapidProductDetailFeatured, style: textTheme.labelSmall?.copyWith(color: colorScheme.onPrimaryContainer)),
+                child: Text(l10n.seller_rapid_product_detail_featured, style: textTheme.labelSmall?.copyWith(color: colorScheme.onPrimaryContainer)),
               ),
             ],
           ),
@@ -90,7 +90,7 @@ class RapidProductDetailScreen extends StatelessWidget {
                 child: Icon(Icons.person_rounded, color: colorScheme.onPrimaryContainer),
               ),
               title: const Text('Jean Mba'),
-              subtitle: Text(l10n.sellerRapidProductDetailMemberSince('mars 2025')),
+              subtitle: Text(l10n.seller_rapid_product_detail_member_since('mars 2025')),
               trailing: Icon(Icons.verified_rounded, color: colorScheme.primary),
             ),
           ),
@@ -98,11 +98,11 @@ class RapidProductDetailScreen extends StatelessWidget {
           // Stats
           Row(
             children: [
-              _statChip('45 ${l10n.sellerRapidProductDetailViews}', Icons.visibility_rounded, colorScheme, textTheme),
+              _statChip('45 ${l10n.seller_rapid_product_detail_views}', Icons.visibility_rounded, colorScheme, textTheme),
               const SizedBox(width: AppSpacing.space8),
-              _statChip('12 ${l10n.sellerRapidProductDetailFavs}', Icons.favorite_rounded, colorScheme, textTheme),
+              _statChip('12 ${l10n.seller_rapid_product_detail_favs}', Icons.favorite_rounded, colorScheme, textTheme),
               const SizedBox(width: AppSpacing.space8),
-              _statChip('3 ${l10n.sellerRapidProductDetailMessagesCount}', Icons.chat_rounded, colorScheme, textTheme),
+              _statChip('3 ${l10n.seller_rapid_product_detail_messages_count}', Icons.chat_rounded, colorScheme, textTheme),
             ],
           ),
           const SizedBox(height: AppSpacing.space32),
@@ -116,7 +116,7 @@ class RapidProductDetailScreen extends StatelessWidget {
               Expanded(
                 child: OutlinedButton.icon(
                   icon: const Icon(Icons.chat_rounded),
-                  label: Text(l10n.sellerRapidProductDetailContact),
+                  label: Text(l10n.seller_rapid_product_detail_contact),
                   onPressed: () => context.push(RoutePaths.rapidMessages),
                 ),
               ),
@@ -124,7 +124,7 @@ class RapidProductDetailScreen extends StatelessWidget {
               Expanded(
                 child: FilledButton.icon(
                   icon: const Icon(Icons.phone_rounded),
-                  label: Text(l10n.productCall),
+                  label: Text(l10n.product_call),
                   onPressed: () {},
                 ),
               ),

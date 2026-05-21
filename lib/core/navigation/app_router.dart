@@ -98,6 +98,7 @@ import '../../presentation/shared/screens/app_update_screen.dart';
 import '../../presentation/profile/screens/accessibility_settings_screen.dart';
 import '../../presentation/splash/splash_screen.dart';
 import '../../presentation/shared/screens/empty_state_screen.dart';
+import '../../core/widgets/empty_state_image.dart';
 import '../../presentation/shared/screens/error_screen.dart';
 import 'route_names.dart';
 
@@ -128,6 +129,7 @@ class AppRouter {
       path: RoutePaths.empty,
       name: RouteNames.empty,
       builder: (_, state) => EmptyStateScreen(
+        type: EmptyStateType.generic,
         title: state.uri.queryParameters['title'] ?? 'Contenu indisponible',
         subtitle: state.uri.queryParameters['subtitle'],
         actionLabel: state.uri.queryParameters['action'],

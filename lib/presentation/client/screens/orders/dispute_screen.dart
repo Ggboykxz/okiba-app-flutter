@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../../core/constants/app_spacing.dart';
 
 class DisputeScreen extends StatefulWidget {
@@ -53,7 +53,7 @@ class _DisputeScreenState extends State<DisputeScreen> {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(AppLocalizations.of(context)!.order_dispute_title),
+        title: Text(AppLocalizations.of(context).order_dispute_title),
       ),
       body: _submitted
           ? Center(
@@ -85,7 +85,7 @@ class _DisputeScreenState extends State<DisputeScreen> {
                       height: AppSpacing.touchMin,
                       child: ElevatedButton(
                         onPressed: () => context.pop(),
-                        child: Text(AppLocalizations.of(context)!.general_close),
+                        child: Text(AppLocalizations.of(context).general_close),
                       ),
                     ),
                   ],
@@ -104,7 +104,7 @@ class _DisputeScreenState extends State<DisputeScreen> {
                   style: textTheme.bodyLarge?.copyWith(color: colorScheme.onSurfaceVariant),
                 ),
                 const SizedBox(height: AppSpacing.space32),
-                Text(AppLocalizations.of(context)!.order_dispute_reason, style: textTheme.titleSmall),
+                Text(AppLocalizations.of(context).order_dispute_reason, style: textTheme.titleSmall),
                 const SizedBox(height: AppSpacing.space12),
                 ...List.generate(_reasons.length, (i) {
                   final selected = _selectedReason == i;
@@ -167,7 +167,7 @@ class _DisputeScreenState extends State<DisputeScreen> {
                   child: OutlinedButton.icon(
                     onPressed: () {},
                     icon: const Icon(Icons.add_photo_alternate_rounded),
-                    label: Text(AppLocalizations.of(context)!.order_dispute_evidence),
+                    label: Text(AppLocalizations.of(context).order_dispute_evidence),
                   ),
                 ),
                 const SizedBox(height: AppSpacing.space24),
@@ -179,7 +179,7 @@ class _DisputeScreenState extends State<DisputeScreen> {
                         ? () => setState(() => _submitted = true)
                         : null,
                     icon: const Icon(Icons.gavel_rounded),
-                    label: Text(AppLocalizations.of(context)!.order_dispute_submit),
+                    label: Text(AppLocalizations.of(context).order_dispute_submit),
                   ),
                 ),
                 const SizedBox(height: AppSpacing.space16),

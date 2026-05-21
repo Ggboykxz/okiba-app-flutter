@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../widgets/product_card.dart';
 
@@ -73,7 +73,7 @@ class SellerProfileScreen extends StatelessWidget {
                     // Stats row
                     Row(
                       children: [
-                        _StatCard(AppLocalizations.of(context)!.seller_profile_products, '156', colorScheme, textTheme),
+                        _StatCard(AppLocalizations.of(context).seller_profile_products, '156', colorScheme, textTheme),
                         const SizedBox(width: AppSpacing.space12),
                         _StatCard('Ventes', '892', colorScheme, textTheme),
                         const SizedBox(width: AppSpacing.space12),
@@ -110,7 +110,7 @@ class SellerProfileScreen extends StatelessWidget {
                         Text('Produits', style: textTheme.titleMedium),
                         TextButton(
                           onPressed: () {},
-                          child: Text(AppLocalizations.of(context)!.general_see_all),
+                          child: Text(AppLocalizations.of(context).general_see_all),
                         ),
                       ],
                     ),

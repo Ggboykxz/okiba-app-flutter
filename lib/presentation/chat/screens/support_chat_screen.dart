@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class SupportChatScreen extends StatefulWidget {
@@ -28,7 +28,7 @@ class _SupportChatScreenState extends State<SupportChatScreen> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
 
     final quickReplies = [
       l10n.chat_support_quick_reply_late,
@@ -219,7 +219,7 @@ class _SupportChatScreenState extends State<SupportChatScreen> {
   }
 
   void _showTicketMenu(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     showModalBottomSheet(
       context: context,
       builder: (ctx) => SafeArea(

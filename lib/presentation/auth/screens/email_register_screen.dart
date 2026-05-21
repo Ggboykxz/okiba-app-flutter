@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -55,12 +55,12 @@ class _EmailRegisterScreenState extends State<EmailRegisterScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppLocalizations.of(context)!.authEmailRegisterTitle,
+                  AppLocalizations.of(context).auth_email_register_title,
                   style: textTheme.headlineMedium,
                 ),
                 const SizedBox(height: AppSpacing.space8),
                 Text(
-                  AppLocalizations.of(context)!.authEmailRegisterSubtitle,
+                  AppLocalizations.of(context).auth_email_register_subtitle,
                   style: textTheme.bodyLarge?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                   ),
@@ -70,12 +70,12 @@ class _EmailRegisterScreenState extends State<EmailRegisterScreen> {
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context)!.authEmailLabel,
+                    labelText: AppLocalizations.of(context).auth_email_label,
                     prefixIcon: const Icon(Icons.email_rounded),
                   ),
                   validator: (v) {
                     if (v == null || !v.contains('@')) {
-                      return AppLocalizations.of(context)!.authEmailInvalid;
+                      return AppLocalizations.of(context).auth_email_invalid;
                     }
                     return null;
                   },
@@ -85,7 +85,7 @@ class _EmailRegisterScreenState extends State<EmailRegisterScreen> {
                   controller: _passwordController,
                   obscureText: _obscurePassword,
                   decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context)!.authPasswordHint,
+                    labelText: AppLocalizations.of(context).auth_password_hint,
                     prefixIcon: const Icon(Icons.lock_rounded),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -98,7 +98,7 @@ class _EmailRegisterScreenState extends State<EmailRegisterScreen> {
                   ),
                   validator: (v) {
                     if (v == null || v.length < 8) {
-                      return AppLocalizations.of(context)!.authPasswordMinChars;
+                      return AppLocalizations.of(context).auth_password_min_chars;
                     }
                     return null;
                   },
@@ -108,7 +108,7 @@ class _EmailRegisterScreenState extends State<EmailRegisterScreen> {
                   controller: _confirmController,
                   obscureText: _obscureConfirm,
                   decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context)!.authConfirmPassword,
+                    labelText: AppLocalizations.of(context).auth_confirm_password,
                     prefixIcon: const Icon(Icons.lock_rounded),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -121,7 +121,7 @@ class _EmailRegisterScreenState extends State<EmailRegisterScreen> {
                   ),
                   validator: (v) {
                     if (v != _passwordController.text) {
-                      return AppLocalizations.of(context)!.authPasswordsNoMatch;
+                      return AppLocalizations.of(context).auth_passwords_no_match;
                     }
                     return null;
                   },
@@ -132,7 +132,7 @@ class _EmailRegisterScreenState extends State<EmailRegisterScreen> {
                   height: AppSpacing.touchMin,
                   child: ElevatedButton(
                     onPressed: _onRegister,
-                    child: Text(AppLocalizations.of(context)!.authRegister),
+                    child: Text(AppLocalizations.of(context).auth_register),
                   ),
                 ),
                 const SizedBox(height: AppSpacing.space8),

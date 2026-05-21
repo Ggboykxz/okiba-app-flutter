@@ -62,6 +62,7 @@
   "auth_forgot_password_title": "Forgot password",
   "auth_reset_subtitle": "Enter your number to reset",
   "auth_reset_sms_info": "A reset code will be sent via SMS.",
+  "auth_sms_info": "You will receive an SMS to confirm your number.",
   "auth_new_password_title": "New password",
   "auth_new_password_subtitle": "Choose a secure password",
   "auth_new_password_hint": "New password",

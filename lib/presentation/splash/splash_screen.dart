@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../core/navigation/route_names.dart';
+import '../../core/widgets/okiba_logo.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,21 +14,13 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
-  late final Animation<double> _scaleAnim;
-  late final Animation<double> _fadeAnim;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1200),
-    );
-    _scaleAnim = Tween<double>(begin: 0.85, end: 1.0).animate(
-      CurvedAnimation(parent: _controller, curve: const Interval(0.0, 0.6, curve: Curves.easeOutBack)),
-    );
-    _fadeAnim = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _controller, curve: const Interval(0.4, 1.0, curve: Curves.easeIn)),
+      duration: const Duration(milliseconds: 1500),
     );
     _controller.forward();
     _navigateAfterDelay();
@@ -48,55 +40,48 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Center(
-        child: AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Transform.scale(
-                  scale: _scaleAnim.value,
-                  child: SvgPicture.asset(
-                    'assets/logo/okiba_mark.svg',
-                    width: 120,
-                    height: 120,
-                    colorFilter: ColorFilter.mode(
-                      colorScheme.primary,
-                      BlendMode.srcIn,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            OkibaLogo(
+              variant: LogoVariant.mark,
+              size: LogoSize.xxl,
+              animate: true,
+            ),
+            const SizedBox(height: 32),
+            FadeTransition(
+              opacity: Tween<double>(begin: 0, end: 1).animate(
+                CurvedAnimation(
+                  parent: _controller,
+                  curve: const Interval(0.3, 0.8, curve: Curves.easeOut),
+                ),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    'OKIBA',
+                    style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                      fontWeight: FontWeight.w800,
+                      color: colorScheme.onSurface,
+                      letterSpacing: 4,
                     ),
                   ),
-                ),
-                const SizedBox(height: 28),
-                Opacity(
-                  opacity: _fadeAnim.value,
-                  child: Column(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/logo/okiba_wordmark.svg',
-                        width: 200,
-                        colorFilter: ColorFilter.mode(
-                          colorScheme.onSurface,
-                          BlendMode.srcIn,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        l10n.app_tagline,
-                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              letterSpacing: 4,
-                              color: colorScheme.onSurfaceVariant,
-                            ),
-                      ),
-                    ],
+                  const SizedBox(height: 8),
+                  Text(
+                    l10n.app_tagline,
+                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                      letterSpacing: 6,
+                      color: colorScheme.onSurfaceVariant,
+                    ),
                   ),
-                ),
-              ],
-            );
-          },
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

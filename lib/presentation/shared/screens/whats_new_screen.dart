@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class WhatsNewScreen extends StatefulWidget {
@@ -23,7 +23,7 @@ class _WhatsNewScreenState extends State<WhatsNewScreen> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
 
     final features = [
       _Feature(Icons.shopping_bag_rounded, l10n.whats_new_feature1_title,

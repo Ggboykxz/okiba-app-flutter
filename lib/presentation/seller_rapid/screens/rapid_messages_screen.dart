@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class RapidMessagesScreen extends StatefulWidget {
@@ -12,14 +12,14 @@ class RapidMessagesScreen extends StatefulWidget {
 class _RapidMessagesScreenState extends State<RapidMessagesScreen> {
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.sellerRapidMessagesTitle),
+        title: Text(l10n.seller_rapid_messages_title),
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.space16),

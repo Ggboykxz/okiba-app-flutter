@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -49,12 +49,12 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppLocalizations.of(context)!.authForgotPasswordTitle,
+                  AppLocalizations.of(context).auth_forgot_password_title,
                   style: textTheme.headlineMedium,
                 ),
                 const SizedBox(height: AppSpacing.space8),
                 Text(
-                  AppLocalizations.of(context)!.authResetSubtitle,
+                  AppLocalizations.of(context).auth_reset_subtitle,
                   style: textTheme.bodyLarge?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                   ),
@@ -64,19 +64,19 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   controller: _phoneController,
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context)!.authPhoneHint,
+                    labelText: AppLocalizations.of(context).auth_phone_hint,
                     prefixIcon: const Icon(Icons.phone_rounded),
                   ),
                   validator: (v) {
                     if (v == null || v.length < 10) {
-                      return AppLocalizations.of(context)!.authInvalidPhone;
+                      return AppLocalizations.of(context).auth_invalid_phone;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: AppSpacing.space8),
                 Text(
-                  AppLocalizations.of(context)!.authResetSmsInfo,
+                  AppLocalizations.of(context).auth_reset_sms_info,
                   style: textTheme.bodySmall?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                   ),
@@ -87,7 +87,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   height: AppSpacing.touchMin,
                   child: ElevatedButton(
                     onPressed: _onSend,
-                    child: Text(AppLocalizations.of(context)!.authSend),
+                    child: Text(AppLocalizations.of(context).auth_send),
                   ),
                 ),
                 const SizedBox(height: AppSpacing.space8),

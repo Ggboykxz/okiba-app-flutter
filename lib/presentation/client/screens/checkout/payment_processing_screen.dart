@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/navigation/route_names.dart';
 
@@ -77,13 +77,13 @@ class _PaymentProcessingScreenState extends State<PaymentProcessingScreen>
                 ),
                 const SizedBox(height: AppSpacing.space40),
                 Text(
-                  AppLocalizations.of(context)!.checkout_processing_title,
+                  AppLocalizations.of(context).checkout_processing_title,
                   style: textTheme.headlineMedium,
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: AppSpacing.space16),
                 Text(
-                  AppLocalizations.of(context)!.checkout_processing_desc,
+                  AppLocalizations.of(context).checkout_processing_desc,
                   style: textTheme.bodyLarge?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                   ),
@@ -104,7 +104,7 @@ class _PaymentProcessingScreenState extends State<PaymentProcessingScreen>
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(AppLocalizations.of(context)!.checkout_orange_money, style: textTheme.titleSmall),
+                          Text(AppLocalizations.of(context).checkout_orange_money, style: textTheme.titleSmall),
                           Text('107 500 FCFA', style: textTheme.titleMedium?.copyWith(
                             color: colorScheme.primary,
                             fontWeight: FontWeight.w700,
@@ -120,7 +120,7 @@ class _PaymentProcessingScreenState extends State<PaymentProcessingScreen>
                   height: AppSpacing.touchMin,
                   child: OutlinedButton(
                     onPressed: () => context.go(RoutePaths.checkout),
-                    child: Text(AppLocalizations.of(context)!.general_cancel),
+                    child: Text(AppLocalizations.of(context).general_cancel),
                   ),
                 ),
               ],

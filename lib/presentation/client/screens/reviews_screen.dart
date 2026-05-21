@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class ReviewsScreen extends StatelessWidget {
@@ -31,7 +31,7 @@ class ReviewsScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(AppLocalizations.of(context)!.reviews_title),
+        title: Text(AppLocalizations.of(context).reviews_title),
       ),
       body: SafeArea(
         child: ListView(

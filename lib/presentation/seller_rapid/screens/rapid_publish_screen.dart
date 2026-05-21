@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -33,7 +33,7 @@ class _RapidPublishScreenState extends State<RapidPublishScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
@@ -44,7 +44,7 @@ class _RapidPublishScreenState extends State<RapidPublishScreen> {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(l10n.sellerRapidPostAd),
+        title: Text(l10n.seller_rapid_post_ad),
       ),
       body: Form(
         key: _formKey,
@@ -80,7 +80,7 @@ class _RapidPublishScreenState extends State<RapidPublishScreen> {
                         ),
                         const SizedBox(height: AppSpacing.space8),
                         Text(
-                          l10n.sellerRapidPhoto,
+                          l10n.seller_rapid_photo,
                           style: textTheme.bodyLarge?.copyWith(
                             color: colorScheme.onSurfaceVariant,
                           ),
@@ -96,12 +96,12 @@ class _RapidPublishScreenState extends State<RapidPublishScreen> {
               controller: _titleController,
               textCapitalization: TextCapitalization.sentences,
               decoration: InputDecoration(
-                labelText: l10n.sellerRapidAdTitle,
+                labelText: l10n.seller_rapid_ad_title,
                 prefixIcon: const Icon(Icons.text_fields_rounded),
               ),
               validator: (v) {
                 if (v == null || v.trim().isEmpty) {
-                  return l10n.sellerRapidAdTitleRequired;
+                  return l10n.seller_rapid_ad_title_required;
                 }
                 return null;
               },
@@ -111,12 +111,12 @@ class _RapidPublishScreenState extends State<RapidPublishScreen> {
               controller: _priceController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: l10n.sellerRapidPrice,
+                labelText: l10n.seller_rapid_price,
                 prefixIcon: const Icon(Icons.monetization_on_rounded),
               ),
               validator: (v) {
                 if (v == null || v.trim().isEmpty) {
-                  return l10n.sellerRapidPriceRequired;
+                  return l10n.seller_rapid_price_required;
                 }
                 return null;
               },
@@ -128,7 +128,7 @@ class _RapidPublishScreenState extends State<RapidPublishScreen> {
               maxLength: 300,
               textCapitalization: TextCapitalization.sentences,
               decoration: InputDecoration(
-                labelText: l10n.sellerRapidDescription,
+                labelText: l10n.seller_rapid_description,
                 prefixIcon: const Icon(Icons.description_rounded),
                 alignLabelWithHint: true,
               ),
@@ -137,7 +137,7 @@ class _RapidPublishScreenState extends State<RapidPublishScreen> {
             // Catégorie
             DropdownButtonFormField<String>(
               decoration: InputDecoration(
-                labelText: l10n.sellerRapidCategorySelect,
+                labelText: l10n.seller_rapid_category_select,
                 prefixIcon: const Icon(Icons.category_rounded),
               ),
               items: const [
@@ -156,7 +156,7 @@ class _RapidPublishScreenState extends State<RapidPublishScreen> {
             // État
             DropdownButtonFormField<String>(
               decoration: InputDecoration(
-                labelText: l10n.sellerRapidCondition,
+                labelText: l10n.seller_rapid_condition,
                 prefixIcon: const Icon(Icons.info_outline_rounded),
               ),
               items: const [
@@ -176,7 +176,7 @@ class _RapidPublishScreenState extends State<RapidPublishScreen> {
               height: AppSpacing.touchMin,
               child: ElevatedButton(
                 onPressed: _onPublish,
-                child: Text(l10n.sellerRapidPublish),
+                child: Text(l10n.seller_rapid_publish),
               ),
             ),
             const SizedBox(height: AppSpacing.space8),

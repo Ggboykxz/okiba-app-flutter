@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/navigation/route_names.dart';
 import '../../widgets/payment_method_card.dart';
@@ -27,7 +27,7 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(AppLocalizations.of(context)!.checkout_payment),
+        title: Text(AppLocalizations.of(context).checkout_payment),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: AppSpacing.space8),
@@ -43,7 +43,7 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
             onTap: () => setState(() => _selected = 0),
             child: PaymentMethodCard(
               method: 'orange_money',
-              label: AppLocalizations.of(context)!.checkout_orange_money,
+              label: AppLocalizations.of(context).checkout_orange_money,
               icon: Icons.phone_android_rounded,
               iconColor: const Color(0xFFFF6B00),
               isSelected: _selected == 0,
@@ -54,7 +54,7 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
             onTap: () => setState(() => _selected = 1),
             child: PaymentMethodCard(
               method: 'mtn_momo',
-              label: AppLocalizations.of(context)!.checkout_mtn_momo,
+              label: AppLocalizations.of(context).checkout_mtn_momo,
               icon: Icons.phone_android_rounded,
               iconColor: const Color(0xFFFFCC00),
               isSelected: _selected == 1,
@@ -65,7 +65,7 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
             onTap: () => setState(() => _selected = 2),
             child: PaymentMethodCard(
               method: 'airtel_money',
-              label: AppLocalizations.of(context)!.checkout_airtel_money,
+              label: AppLocalizations.of(context).checkout_airtel_money,
               icon: Icons.phone_android_rounded,
               iconColor: const Color(0xFFED1C24),
               isSelected: _selected == 2,
@@ -76,7 +76,7 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
             onTap: () => setState(() => _selected = 3),
             child: PaymentMethodCard(
               method: 'card',
-              label: AppLocalizations.of(context)!.checkout_card,
+              label: AppLocalizations.of(context).checkout_card,
               icon: Icons.credit_card_rounded,
               iconColor: const Color(0xFF6366F1),
               isSelected: _selected == 3,
@@ -87,7 +87,7 @@ class _CheckoutPaymentScreenState extends State<CheckoutPaymentScreen> {
             onTap: () => setState(() => _selected = 4),
             child: PaymentMethodCard(
               method: 'cash',
-              label: AppLocalizations.of(context)!.checkout_cash,
+              label: AppLocalizations.of(context).checkout_cash,
               icon: Icons.money_rounded,
               isSelected: _selected == 4,
               onTap: () {},

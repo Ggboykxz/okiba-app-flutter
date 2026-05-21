@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class RapidFlashSalesScreen extends StatefulWidget {
@@ -12,18 +12,18 @@ class RapidFlashSalesScreen extends StatefulWidget {
 class _RapidFlashSalesScreenState extends State<RapidFlashSalesScreen> {
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.sellerRapidFlashTitle),
+        title: Text(l10n.seller_rapid_flash_title),
         actions: [
           TextButton.icon(
             icon: const Icon(Icons.add_rounded, size: 18),
-            label: Text(l10n.sellerRapidFlashCreate),
+            label: Text(l10n.seller_rapid_flash_create),
             onPressed: () => _showCreateSheet(context),
           ),
         ],
@@ -32,7 +32,7 @@ class _RapidFlashSalesScreenState extends State<RapidFlashSalesScreen> {
         padding: const EdgeInsets.all(AppSpacing.space16),
         children: [
           // Active flash sale
-          Text(l10n.sellerRapidFlashOngoing, style: textTheme.titleLarge),
+          Text(l10n.seller_rapid_flash_ongoing, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           _flashCard(
             'Soldes éclair — Mode',
@@ -46,7 +46,7 @@ class _RapidFlashSalesScreenState extends State<RapidFlashSalesScreen> {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Upcoming
-          Text(l10n.sellerRapidFlashUpcoming, style: textTheme.titleLarge),
+          Text(l10n.seller_rapid_flash_upcoming, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           _flashCard(
             'Tech Week',
@@ -60,7 +60,7 @@ class _RapidFlashSalesScreenState extends State<RapidFlashSalesScreen> {
           ),
           const SizedBox(height: AppSpacing.space16),
           // Past
-          Text(l10n.sellerRapidFlashEnded, style: textTheme.titleLarge),
+          Text(l10n.seller_rapid_flash_ended, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           _flashCard(
             'Promo de Pâques',
@@ -158,7 +158,7 @@ class _RapidFlashSalesScreenState extends State<RapidFlashSalesScreen> {
   }
 
   void _showCreateSheet(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final nameController = TextEditingController();
     final discountController = TextEditingController();
     final durationController = TextEditingController();
@@ -175,19 +175,19 @@ class _RapidFlashSalesScreenState extends State<RapidFlashSalesScreen> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(l10n.sellerRapidFlashNew, style: Theme.of(ctx).textTheme.titleLarge),
+            Text(l10n.seller_rapid_flash_new, style: Theme.of(ctx).textTheme.titleLarge),
             const SizedBox(height: AppSpacing.space16),
-            TextField(controller: nameController, decoration: InputDecoration(labelText: l10n.sellerRapidFlashName)),
+            TextField(controller: nameController, decoration: InputDecoration(labelText: l10n.seller_rapid_flash_name)),
             const SizedBox(height: AppSpacing.space12),
-            TextField(controller: discountController, decoration: InputDecoration(labelText: l10n.sellerRapidFlashDiscount, prefixText: '% ')),
+            TextField(controller: discountController, decoration: InputDecoration(labelText: l10n.seller_rapid_flash_discount, prefixText: '% ')),
             const SizedBox(height: AppSpacing.space12),
-            TextField(controller: durationController, decoration: InputDecoration(labelText: l10n.sellerRapidFlashDuration), keyboardType: TextInputType.number),
+            TextField(controller: durationController, decoration: InputDecoration(labelText: l10n.seller_rapid_flash_duration), keyboardType: TextInputType.number),
             const SizedBox(height: AppSpacing.space24),
             SizedBox(
               width: double.infinity,
               child: FilledButton(
                 onPressed: () { Navigator.pop(ctx); },
-                child: Text(l10n.sellerRapidFlashSchedule),
+                child: Text(l10n.seller_rapid_flash_schedule),
               ),
             ),
             const SizedBox(height: AppSpacing.space8),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class OnboardingTutorialScreen extends StatefulWidget {
@@ -16,7 +16,7 @@ class _OnboardingTutorialScreenState extends State<OnboardingTutorialScreen> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
 
     final steps = [
       _TutorialStep(Icons.home_rounded, l10n.tutorial_step1_title, 'Parcourez les produits près de chez vous. Utilisez la recherche pour trouver ce que vous cherchez.'),

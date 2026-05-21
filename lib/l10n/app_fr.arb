@@ -62,6 +62,7 @@
   "auth_forgot_password_title": "Mot de passe oublié",
   "auth_reset_subtitle": "Entrez votre numéro pour réinitialiser",
   "auth_reset_sms_info": "Un code de réinitialisation vous sera envoyé par SMS.",
+  "auth_sms_info": "Vous recevrez un SMS pour confirmer votre numéro.",
   "auth_new_password_title": "Nouveau mot de passe",
   "auth_new_password_subtitle": "Choisissez un mot de passe sécurisé",
   "auth_new_password_hint": "Nouveau mot de passe",

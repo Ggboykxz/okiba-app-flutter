@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class AddressBookScreen extends StatefulWidget {
@@ -20,7 +20,7 @@ class _AddressBookScreenState extends State<AddressBookScreen> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -122,7 +122,7 @@ class _AddressBookScreenState extends State<AddressBookScreen> {
   }
 
   void _showEditSheet(BuildContext context, _Address address) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final labelCtrl = TextEditingController(text: address.label);
     final addrCtrl = TextEditingController(text: address.address);
     showModalBottomSheet(
@@ -158,7 +158,7 @@ class _AddressBookScreenState extends State<AddressBookScreen> {
   }
 
   void _showAddSheet(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final labelCtrl = TextEditingController();
     final addrCtrl = TextEditingController();
     showModalBottomSheet(
@@ -194,7 +194,7 @@ class _AddressBookScreenState extends State<AddressBookScreen> {
   }
 
   void _confirmDelete(BuildContext context, String label) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(

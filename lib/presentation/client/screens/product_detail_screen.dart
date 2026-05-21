@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
 import '../widgets/product_image_gallery.dart';
@@ -119,7 +119,7 @@ class ProductDetailScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: AppSpacing.space24),
-                        Text(AppLocalizations.of(context)!.product_description, style: textTheme.titleMedium),
+                        Text(AppLocalizations.of(context).product_description, style: textTheme.titleMedium),
                         const SizedBox(height: AppSpacing.space8),
                         Text(
                           'Chemise traditionnelle gabonaise en pagne wax, fabriquée artisanalement. Taille unique, coupe moderne. Idéale pour les cérémonies et le quotidien.\n\n\u2022 100% coton\n\u2022 Lavage en machine 30\u00b0C\n\u2022 Livraison sous 2h',
@@ -137,7 +137,7 @@ class ProductDetailScreen extends StatelessWidget {
                               RoutePaths.negotiate.replaceAll(':id', productId),
                             ),
                             icon: const Icon(Icons.monetization_on_rounded),
-                            label: Text(AppLocalizations.of(context)!.product_negotiate),
+                            label: Text(AppLocalizations.of(context).product_negotiate),
                           ),
                         ),
                         const SizedBox(height: AppSpacing.space32),
@@ -182,7 +182,7 @@ class ProductDetailScreen extends StatelessWidget {
                       child: ElevatedButton.icon(
                         onPressed: () => context.push(RoutePaths.cart),
                         icon: const Icon(Icons.shopping_cart_rounded),
-                        label: Text(AppLocalizations.of(context)!.product_add_to_cart),
+                        label: Text(AppLocalizations.of(context).product_add_to_cart),
                       ),
                     ),
                   ),

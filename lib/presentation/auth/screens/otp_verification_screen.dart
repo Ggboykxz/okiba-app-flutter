@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -95,12 +95,12 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppLocalizations.of(context)!.authVerifyTitle,
+                AppLocalizations.of(context).auth_verify_title,
                 style: textTheme.headlineMedium,
               ),
               const SizedBox(height: AppSpacing.space8),
               Text(
-                AppLocalizations.of(context)!.authOtpSubtitle,
+                AppLocalizations.of(context).auth_otp_subtitle,
                 style: textTheme.bodyLarge?.copyWith(
                   color: colorScheme.onSurfaceVariant,
                 ),
@@ -152,8 +152,8 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 children: [
                   Text(
                     _canResend
-                        ? '${AppLocalizations.of(context)!.authOtpNotReceived}'
-                        : AppLocalizations.of(context)!.authResendIn(_timerSeconds.toString()),
+                        ? AppLocalizations.of(context).auth_otp_not_received
+                        : AppLocalizations.of(context).auth_resend_in(_timerSeconds.toString()),
                     style: textTheme.bodyMedium?.copyWith(
                       color: colorScheme.onSurfaceVariant,
                     ),
@@ -161,7 +161,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   GestureDetector(
                     onTap: _canResend ? _onResend : null,
                     child: Text(
-                      AppLocalizations.of(context)!.authResend,
+                      AppLocalizations.of(context).auth_resend,
                       style: textTheme.labelLarge?.copyWith(
                         color: _canResend
                             ? colorScheme.primary
@@ -177,7 +177,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 height: AppSpacing.touchMin,
                 child: ElevatedButton(
                   onPressed: _onVerify,
-                  child: Text(AppLocalizations.of(context)!.authVerify),
+                  child: Text(AppLocalizations.of(context).auth_verify),
                 ),
               ),
               const SizedBox(height: AppSpacing.space8),

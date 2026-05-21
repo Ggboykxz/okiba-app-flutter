@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class CartItemEditScreen extends StatefulWidget {
@@ -34,7 +34,7 @@ class _CartItemEditScreenState extends State<CartItemEditScreen> {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(AppLocalizations.of(context)!.cart_item_edit_title),
+        title: Text(AppLocalizations.of(context).cart_item_edit_title),
         actions: [
           IconButton(
             icon: Icon(Icons.delete_outline_rounded, color: colorScheme.error),
@@ -43,7 +43,7 @@ class _CartItemEditScreenState extends State<CartItemEditScreen> {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: const Text('Article retiré du panier'),
-                  action: SnackBarAction(label: AppLocalizations.of(context)!.general_cancel, onPressed: () {}),
+                  action: SnackBarAction(label: AppLocalizations.of(context).general_cancel, onPressed: () {}),
                 ),
               );
             },
@@ -86,7 +86,7 @@ class _CartItemEditScreenState extends State<CartItemEditScreen> {
               ),
               const SizedBox(height: AppSpacing.space32),
               // Quantity
-              Text(AppLocalizations.of(context)!.cart_item_quantity, style: textTheme.titleSmall),
+              Text(AppLocalizations.of(context).cart_item_quantity, style: textTheme.titleSmall),
               const SizedBox(height: AppSpacing.space12),
               Row(
                 children: [
@@ -112,7 +112,7 @@ class _CartItemEditScreenState extends State<CartItemEditScreen> {
               ),
               const SizedBox(height: AppSpacing.space32),
               // Note
-              Text('${AppLocalizations.of(context)!.cart_item_note} (optionnelle)', style: textTheme.titleSmall),
+              Text('${AppLocalizations.of(context).cart_item_note} (optionnelle)', style: textTheme.titleSmall),
               const SizedBox(height: AppSpacing.space12),
               TextField(
                 controller: _noteController,
@@ -134,7 +134,7 @@ class _CartItemEditScreenState extends State<CartItemEditScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(AppLocalizations.of(context)!.cart_total, style: textTheme.titleMedium),
+                    Text(AppLocalizations.of(context).cart_total, style: textTheme.titleMedium),
                     Text(
                       '${_quantity * 15000} FCFA',
                       style: textTheme.titleLarge?.copyWith(
@@ -151,7 +151,7 @@ class _CartItemEditScreenState extends State<CartItemEditScreen> {
                 height: AppSpacing.touchMin,
                 child: ElevatedButton(
                   onPressed: () => context.pop(),
-                  child: Text(AppLocalizations.of(context)!.general_save),
+                  child: Text(AppLocalizations.of(context).general_save),
                 ),
               ),
               const SizedBox(height: AppSpacing.space8),

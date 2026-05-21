@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -41,7 +41,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: AppSpacing.space8),
               Text(
-                AppLocalizations.of(context)!.welcomeSubtitle,
+                AppLocalizations.of(context).welcome_subtitle,
                 style: textTheme.labelSmall?.copyWith(
                   letterSpacing: 4,
                   color: colorScheme.onSurfaceVariant,
@@ -49,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: AppSpacing.space48),
               Text(
-                AppLocalizations.of(context)!.welcomeTagline,
+                AppLocalizations.of(context).welcome_tagline,
                 textAlign: TextAlign.center,
                 style: textTheme.bodyLarge?.copyWith(
                   color: colorScheme.onSurfaceVariant,
@@ -61,7 +61,7 @@ class WelcomeScreen extends StatelessWidget {
                 height: AppSpacing.touchMin,
                 child: ElevatedButton(
                   onPressed: () => context.push(RoutePaths.register),
-                  child: Text(AppLocalizations.of(context)!.authRegister),
+                  child: Text(AppLocalizations.of(context).auth_register),
                 ),
               ),
               const SizedBox(height: AppSpacing.space16),
@@ -70,7 +70,7 @@ class WelcomeScreen extends StatelessWidget {
                 height: AppSpacing.touchMin,
                 child: OutlinedButton(
                   onPressed: () => context.push(RoutePaths.login),
-                  child: Text(AppLocalizations.of(context)!.authLoginButton),
+                  child: Text(AppLocalizations.of(context).auth_login_button),
                 ),
               ),
               const SizedBox(height: AppSpacing.space24),

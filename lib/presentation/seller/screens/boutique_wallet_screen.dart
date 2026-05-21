@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class BoutiqueWalletScreen extends StatelessWidget {
@@ -7,14 +7,14 @@ class BoutiqueWalletScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.boutiqueWalletTitle),
+        title: Text(l10n.boutique_wallet_title),
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.space16),
@@ -26,7 +26,7 @@ class BoutiqueWalletScreen extends StatelessWidget {
               padding: const EdgeInsets.all(AppSpacing.space24),
               child: Column(
                 children: [
-                  Text(l10n.boutiqueWalletBalance, style: textTheme.titleSmall?.copyWith(color: colorScheme.onPrimary.withValues(alpha: 0.8))),
+                  Text(l10n.boutique_wallet_balance, style: textTheme.titleSmall?.copyWith(color: colorScheme.onPrimary.withValues(alpha: 0.8))),
                   const SizedBox(height: AppSpacing.space8),
                   Text('2 450 000 FCFA',
                     style: textTheme.headlineLarge?.copyWith(color: colorScheme.onPrimary, fontWeight: FontWeight.w700)),
@@ -36,7 +36,7 @@ class BoutiqueWalletScreen extends StatelessWidget {
                     children: [
                       Icon(Icons.trending_up_rounded, color: colorScheme.onPrimary, size: 20),
                       const SizedBox(width: 6),
-                      Text(l10n.boutiqueWalletVsLastMonth('15'),
+                      Text(l10n.boutique_wallet_vs_last_month('15'),
                         style: textTheme.bodySmall?.copyWith(color: colorScheme.onPrimary.withValues(alpha: 0.8))),
                     ],
                   ),
@@ -46,21 +46,21 @@ class BoutiqueWalletScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Withdraw
-          Text(l10n.boutiqueWalletWithdraw, style: textTheme.titleLarge),
+          Text(l10n.boutique_wallet_withdraw, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           Card(
             child: Column(
               children: [
                 ListTile(
                   leading: Icon(Icons.phone_android_rounded, color: colorScheme.primary),
-                  title: Text(l10n.boutiqueWalletOrangeMoney),
+                  title: Text(l10n.boutique_wallet_orange_money),
                   subtitle: const Text('+241 74 12 34 56'),
                   trailing: const Icon(Icons.check_circle_rounded, color: Colors.green),
                 ),
                 const Divider(height: 1),
                 ListTile(
                   leading: Icon(Icons.account_balance_rounded, color: colorScheme.secondary),
-                  title: Text(l10n.boutiqueWalletBank),
+                  title: Text(l10n.boutique_wallet_bank),
                   subtitle: const Text('BGFI Bank •••• 1234'),
                   trailing: const Icon(Icons.check_circle_rounded, color: Colors.green),
                 ),
@@ -70,18 +70,18 @@ class BoutiqueWalletScreen extends StatelessWidget {
           const SizedBox(height: AppSpacing.space16),
           FilledButton.icon(
             icon: const Icon(Icons.send_rounded),
-            label: Text(l10n.boutiqueWalletMakeWithdrawal),
+            label: Text(l10n.boutique_wallet_make_withdrawal),
             onPressed: () => _showWithdrawSheet(context),
           ),
           const SizedBox(height: AppSpacing.space24),
           // Transactions
-          Text(l10n.boutiqueWalletRecent, style: textTheme.titleLarge),
+          Text(l10n.boutique_wallet_recent, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
-          _transaction(l10n.boutiqueWalletSale, '+25 000 FCFA', '12 mai 2026', true, colorScheme, textTheme),
-          _transaction(l10n.boutiqueWalletWithdrawalOm, '-50 000 FCFA', '10 mai 2026', false, colorScheme, textTheme),
-          _transaction(l10n.boutiqueWalletSale, '+15 000 FCFA', '9 mai 2026', true, colorScheme, textTheme),
-          _transaction(l10n.boutiqueWalletSale, '+32 000 FCFA', '8 mai 2026', true, colorScheme, textTheme),
-          _transaction(l10n.boutiqueWalletWithdrawalBank, '-200 000 FCFA', '5 mai 2026', false, colorScheme, textTheme),
+          _transaction(l10n.boutique_wallet_sale, '+25 000 FCFA', '12 mai 2026', true, colorScheme, textTheme),
+          _transaction(l10n.boutique_wallet_withdrawal_om, '-50 000 FCFA', '10 mai 2026', false, colorScheme, textTheme),
+          _transaction(l10n.boutique_wallet_sale, '+15 000 FCFA', '9 mai 2026', true, colorScheme, textTheme),
+          _transaction(l10n.boutique_wallet_sale, '+32 000 FCFA', '8 mai 2026', true, colorScheme, textTheme),
+          _transaction(l10n.boutique_wallet_withdrawal_bank, '-200 000 FCFA', '5 mai 2026', false, colorScheme, textTheme),
         ],
       ),
     );
@@ -107,7 +107,7 @@ class BoutiqueWalletScreen extends StatelessWidget {
   }
 
   void _showWithdrawSheet(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final amountController = TextEditingController();
     showModalBottomSheet(
       context: context,
@@ -123,21 +123,21 @@ class BoutiqueWalletScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(l10n.boutiqueWalletMakeWithdrawal, style: Theme.of(ctx).textTheme.titleLarge),
+            Text(l10n.boutique_wallet_make_withdrawal, style: Theme.of(ctx).textTheme.titleLarge),
             const SizedBox(height: AppSpacing.space16),
             TextField(
               controller: amountController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: l10n.boutiqueWalletAmount,
-                prefixText: '${l10n.currencyFcfa} ',
+                labelText: l10n.boutique_wallet_amount,
+                prefixText: '${l10n.currency_fcfa} ',
               ),
             ),
             const SizedBox(height: AppSpacing.space16),
             DropdownButtonFormField<String>(
-              initialValue: l10n.boutiqueWalletOrangeMoney,
-              decoration: InputDecoration(labelText: l10n.boutiqueWalletMethod),
-              items: [l10n.boutiqueWalletOrangeMoney, 'MTN MoMo', 'Airtel Money', l10n.boutiqueWalletBank]
+              initialValue: l10n.boutique_wallet_orange_money,
+              decoration: InputDecoration(labelText: l10n.boutique_wallet_method),
+              items: [l10n.boutique_wallet_orange_money, 'MTN MoMo', 'Airtel Money', l10n.boutique_wallet_bank]
                   .map((m) => DropdownMenuItem(value: m, child: Text(m)))
                   .toList(),
               onChanged: (_) {},
@@ -147,7 +147,7 @@ class BoutiqueWalletScreen extends StatelessWidget {
               width: double.infinity,
               child: FilledButton(
                 onPressed: () { Navigator.pop(ctx); },
-                child: Text(l10n.boutiqueWalletConfirmWithdrawal),
+                child: Text(l10n.boutique_wallet_confirm_withdrawal),
               ),
             ),
             const SizedBox(height: AppSpacing.space16),

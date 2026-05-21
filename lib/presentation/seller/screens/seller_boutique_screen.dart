@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
 import 'package:go_router/go_router.dart';
@@ -9,14 +9,14 @@ class SellerBoutiqueScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.boutiqueTitle),
+        title: Text(l10n.boutique_title),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings_rounded),
@@ -96,14 +96,14 @@ class SellerBoutiqueScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Statistiques
-          Text(l10n.boutiqueOverview, style: textTheme.titleLarge),
+          Text(l10n.boutique_overview, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           Row(
             children: [
               Expanded(
                 child: _statCard(
                   '156',
-                  l10n.boutiqueProducts,
+                  l10n.boutique_products,
                   Icons.inventory_2_rounded,
                   colorScheme.primary,
                   colorScheme,
@@ -114,7 +114,7 @@ class SellerBoutiqueScreen extends StatelessWidget {
               Expanded(
                 child: _statCard(
                   '1 230',
-                  l10n.sellerOrders,
+                  l10n.seller_orders,
                   Icons.shopping_bag_rounded,
                   colorScheme.secondary,
                   colorScheme,
@@ -129,7 +129,7 @@ class SellerBoutiqueScreen extends StatelessWidget {
               Expanded(
                 child: _statCard(
                   '2,5 M',
-                  '${l10n.currencyFcfa} ${l10n.boutiqueSales}',
+                  '${l10n.currency_fcfa} ${l10n.boutique_sales}',
                   Icons.trending_up_rounded,
                   colorScheme.tertiary,
                   colorScheme,
@@ -140,7 +140,7 @@ class SellerBoutiqueScreen extends StatelessWidget {
               Expanded(
                 child: _statCard(
                   '4.8',
-                  l10n.boutiqueRating,
+                  l10n.boutique_rating,
                   Icons.star_rounded,
                   colorScheme.secondary,
                   colorScheme,
@@ -151,13 +151,13 @@ class SellerBoutiqueScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Actions rapides
-          Text(l10n.boutiqueActions, style: textTheme.titleLarge),
+          Text(l10n.boutique_actions, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           Row(
             children: [
               Expanded(
                 child: _actionButton(
-                  l10n.boutiqueAddProduct,
+                  l10n.boutique_add_product,
                   Icons.add_circle_rounded,
                   colorScheme.primary,
                   colorScheme,
@@ -168,7 +168,7 @@ class SellerBoutiqueScreen extends StatelessWidget {
               const SizedBox(width: AppSpacing.space12),
               Expanded(
                 child: _actionButton(
-                  l10n.boutiqueManageStock,
+                  l10n.boutique_manage_stock,
                   Icons.inventory_rounded,
                   colorScheme.secondary,
                   colorScheme,
@@ -179,7 +179,7 @@ class SellerBoutiqueScreen extends StatelessWidget {
               const SizedBox(width: AppSpacing.space12),
               Expanded(
                 child: _actionButton(
-                  l10n.boutiqueViewReviews,
+                  l10n.boutique_view_reviews,
                   Icons.rate_review_rounded,
                   colorScheme.tertiary,
                   colorScheme,
@@ -194,10 +194,10 @@ class SellerBoutiqueScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(l10n.boutiqueRecentProducts, style: textTheme.titleLarge),
+              Text(l10n.boutique_recent_products, style: textTheme.titleLarge),
               TextButton(
                 onPressed: () => context.push(RoutePaths.boutiqueCatalog),
-                child: Text(l10n.boutiqueManage),
+                child: Text(l10n.boutique_manage),
               ),
             ],
           ),
@@ -240,7 +240,7 @@ class SellerBoutiqueScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Performance
-          Text(l10n.boutiquePerformance, style: textTheme.titleLarge),
+          Text(l10n.boutique_performance, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           Card(
             child: Padding(
@@ -248,7 +248,7 @@ class SellerBoutiqueScreen extends StatelessWidget {
               child: Column(
                 children: [
                   _perfRow(
-                    l10n.boutiqueViewsThisWeek,
+                    l10n.boutique_views_this_week,
                     '1 245',
                     '+12%',
                     true,
@@ -257,7 +257,7 @@ class SellerBoutiqueScreen extends StatelessWidget {
                   ),
                   const Divider(height: AppSpacing.space20),
                   _perfRow(
-                    l10n.boutiqueConversionRate,
+                    l10n.boutique_conversion_rate,
                     '3.2%',
                     '+0.5%',
                     true,
@@ -266,7 +266,7 @@ class SellerBoutiqueScreen extends StatelessWidget {
                   ),
                   const Divider(height: AppSpacing.space20),
                   _perfRow(
-                    l10n.boutiqueResponseTime,
+                    l10n.boutique_response_time,
                     '~15 min',
                     '-2 min',
                     true,

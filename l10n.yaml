@@ -1,6 +1,6 @@
 arb-dir: lib/l10n
-template-arb-file: intl_en.arb
+template-arb-file: app_en.arb
 output-localization-file: app_localizations.dart
-output-dir: .dart_tool/flutter_gen/gen_l10n
 nullable-getter: false
 format: true
+use-deferred-loading: false

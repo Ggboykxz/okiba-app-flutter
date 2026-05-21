@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
 
@@ -29,7 +29,7 @@ class CategoryScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: AppBar(title: Text(AppLocalizations.of(context)!.category_title)),
+      appBar: AppBar(title: Text(AppLocalizations.of(context).category_title)),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(AppSpacing.space16),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../widgets/category_chip.dart';
 import '../widgets/filter_bottom_sheet.dart';
@@ -84,7 +84,7 @@ class _SearchResultsScreenState extends State<SearchResultsScreen> {
                     padding: const EdgeInsets.only(right: AppSpacing.space8),
                     child: CategoryChip(
                       icon: Icons.tune_rounded,
-                      label: AppLocalizations.of(context)!.general_filters,
+                      label: AppLocalizations.of(context).general_filters,
                       onTap: () => FilterBottomSheet.show(context),
                     ),
                   ),

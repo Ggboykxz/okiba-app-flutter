@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class BoutiqueSettingsScreen extends StatefulWidget {
@@ -30,16 +30,16 @@ class _BoutiqueSettingsScreenState extends State<BoutiqueSettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.boutiqueSettingsTitle),
+        title: Text(l10n.boutique_settings_title),
         actions: [
-          TextButton(onPressed: () {}, child: Text(l10n.boutiqueSettingsSave)),
+          TextButton(onPressed: () {}, child: Text(l10n.boutique_settings_save)),
         ],
       ),
       body: ListView(
@@ -72,7 +72,7 @@ class _BoutiqueSettingsScreenState extends State<BoutiqueSettingsScreen> {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Banner
-          Text(l10n.boutiqueSettingsBanner, style: textTheme.titleMedium),
+          Text(l10n.boutique_settings_banner, style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space8),
           Container(
             height: 120,
@@ -87,7 +87,7 @@ class _BoutiqueSettingsScreenState extends State<BoutiqueSettingsScreen> {
                 children: [
                   Icon(Icons.add_photo_alternate_rounded, color: colorScheme.onSurfaceVariant),
                   const SizedBox(height: 4),
-                  Text(l10n.boutiqueSettingsAddBanner, style: textTheme.bodySmall?.copyWith(color: colorScheme.onSurfaceVariant)),
+                  Text(l10n.boutique_settings_add_banner, style: textTheme.bodySmall?.copyWith(color: colorScheme.onSurfaceVariant)),
                 ],
               ),
             ),
@@ -96,13 +96,13 @@ class _BoutiqueSettingsScreenState extends State<BoutiqueSettingsScreen> {
           // Name
           TextFormField(
             controller: _nameController,
-            decoration: InputDecoration(labelText: l10n.boutiqueSettingsName),
+            decoration: InputDecoration(labelText: l10n.boutique_settings_name),
           ),
           const SizedBox(height: AppSpacing.space16),
           // Description
           TextFormField(
             controller: _descriptionController,
-            decoration: InputDecoration(labelText: l10n.boutiqueSettingsDescription, alignLabelWithHint: true),
+            decoration: InputDecoration(labelText: l10n.boutique_settings_description, alignLabelWithHint: true),
             maxLines: 3,
           ),
           const SizedBox(height: AppSpacing.space16),
@@ -112,7 +112,7 @@ class _BoutiqueSettingsScreenState extends State<BoutiqueSettingsScreen> {
               Expanded(
                 child: TextFormField(
                   controller: _phoneController,
-                  decoration: InputDecoration(labelText: l10n.boutiqueSettingsPhone),
+                  decoration: InputDecoration(labelText: l10n.boutique_settings_phone),
                   keyboardType: TextInputType.phone,
                 ),
               ),
@@ -120,7 +120,7 @@ class _BoutiqueSettingsScreenState extends State<BoutiqueSettingsScreen> {
               Expanded(
                 child: TextFormField(
                   controller: _emailController,
-                  decoration: InputDecoration(labelText: l10n.boutiqueSettingsEmail),
+                  decoration: InputDecoration(labelText: l10n.boutique_settings_email),
                   keyboardType: TextInputType.emailAddress,
                 ),
               ),
@@ -130,26 +130,26 @@ class _BoutiqueSettingsScreenState extends State<BoutiqueSettingsScreen> {
           // Address
           TextFormField(
             controller: _addressController,
-            decoration: InputDecoration(labelText: l10n.boutiqueSettingsAddress),
+            decoration: InputDecoration(labelText: l10n.boutique_settings_address),
           ),
           const SizedBox(height: AppSpacing.space24),
           // Hours
-          Text(l10n.boutiqueSettingsHours, style: textTheme.titleMedium),
+          Text(l10n.boutique_settings_hours, style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space12),
           Row(
             children: [
               Expanded(
-                child: _timePicker(l10n.boutiqueSettingsOpening, _openTime, (t) => setState(() => _openTime = t), colorScheme, textTheme),
+                child: _timePicker(l10n.boutique_settings_opening, _openTime, (t) => setState(() => _openTime = t), colorScheme, textTheme),
               ),
               const SizedBox(width: AppSpacing.space12),
               Expanded(
-                child: _timePicker(l10n.boutiqueSettingsClosing, _closeTime, (t) => setState(() => _closeTime = t), colorScheme, textTheme),
+                child: _timePicker(l10n.boutique_settings_closing, _closeTime, (t) => setState(() => _closeTime = t), colorScheme, textTheme),
               ),
             ],
           ),
           const SizedBox(height: AppSpacing.space24),
           // Delivery zone
-          Text(l10n.boutiqueSettingsDeliveryZones, style: textTheme.titleMedium),
+          Text(l10n.boutique_settings_delivery_zones, style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space12),
           Wrap(
             spacing: AppSpacing.space8,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -52,12 +52,12 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppLocalizations.of(context)!.roleQuestion,
+                AppLocalizations.of(context).role_question,
                 style: textTheme.headlineMedium,
               ),
               const SizedBox(height: AppSpacing.space8),
               Text(
-                AppLocalizations.of(context)!.roleSubtitle,
+                AppLocalizations.of(context).role_subtitle,
                 style: textTheme.bodyLarge?.copyWith(
                   color: colorScheme.onSurfaceVariant,
                 ),
@@ -160,7 +160,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
                           }
                         }
                       : null,
-                  child: Text(AppLocalizations.of(context)!.authContinue),
+                  child: Text(AppLocalizations.of(context).auth_continue),
                 ),
               ),
               const SizedBox(height: AppSpacing.space8),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class BoutiqueAnalyticsScreen extends StatefulWidget {
@@ -16,14 +16,14 @@ class _BoutiqueAnalyticsScreenState extends State<BoutiqueAnalyticsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.boutiqueAnalyticsTitle),
+        title: Text(l10n.boutique_analytics_title),
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.space16),
@@ -69,7 +69,7 @@ class _BoutiqueAnalyticsScreenState extends State<BoutiqueAnalyticsScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(l10n.boutiqueAnalyticsRevenue, style: textTheme.titleMedium),
+                  Text(l10n.boutique_analytics_revenue, style: textTheme.titleMedium),
                   const SizedBox(height: AppSpacing.space16),
                   Row(
                     children: [
@@ -80,7 +80,7 @@ class _BoutiqueAnalyticsScreenState extends State<BoutiqueAnalyticsScreen> {
                         children: [
                           Text('2 450 000 FCFA',
                             style: textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w700)),
-                          Text(l10n.boutiqueAnalyticsVsPrevious('15'),
+                          Text(l10n.boutique_analytics_vs_previous('15'),
                             style: textTheme.bodySmall?.copyWith(color: colorScheme.primary)),
                         ],
                       ),
@@ -114,22 +114,22 @@ class _BoutiqueAnalyticsScreenState extends State<BoutiqueAnalyticsScreen> {
           // Stats grid
           Row(
             children: [
-              Expanded(child: _statCard(l10n.boutiqueAnalyticsOrders, '89', Icons.shopping_bag_rounded, colorScheme, textTheme)),
+              Expanded(child: _statCard(l10n.boutique_analytics_orders, '89', Icons.shopping_bag_rounded, colorScheme, textTheme)),
               const SizedBox(width: AppSpacing.space12),
-              Expanded(child: _statCard(l10n.boutiqueAnalyticsViews, '12 450', Icons.visibility_rounded, colorScheme, textTheme)),
+              Expanded(child: _statCard(l10n.boutique_analytics_views, '12 450', Icons.visibility_rounded, colorScheme, textTheme)),
             ],
           ),
           const SizedBox(height: AppSpacing.space12),
           Row(
             children: [
-              Expanded(child: _statCard(l10n.boutiqueAnalyticsConversion, '3.2%', Icons.trending_up_rounded, colorScheme, textTheme)),
+              Expanded(child: _statCard(l10n.boutique_analytics_conversion, '3.2%', Icons.trending_up_rounded, colorScheme, textTheme)),
               const SizedBox(width: AppSpacing.space12),
-              Expanded(child: _statCard(l10n.boutiqueAnalyticsAvgCart, '27 500', Icons.shopping_cart_rounded, colorScheme, textTheme)),
+              Expanded(child: _statCard(l10n.boutique_analytics_avg_cart, '27 500', Icons.shopping_cart_rounded, colorScheme, textTheme)),
             ],
           ),
           const SizedBox(height: AppSpacing.space24),
           // Top products
-          Text(l10n.boutiqueAnalyticsPopular, style: textTheme.titleLarge),
+          Text(l10n.boutique_analytics_popular, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           ...['Chemise wax', 'Robe pagne', 'Sac artisanal'].asMap().entries.map((e) {
             return Card(
@@ -140,7 +140,7 @@ class _BoutiqueAnalyticsScreenState extends State<BoutiqueAnalyticsScreen> {
                   child: Text('${e.key + 1}', style: textTheme.titleSmall?.copyWith(color: colorScheme.onPrimaryContainer)),
                 ),
                 title: Text(e.value),
-                trailing: Text('${[45, 32, 28][e.key]} ${l10n.boutiqueAnalyticsSales}', style: textTheme.bodyMedium?.copyWith(color: colorScheme.onSurfaceVariant)),
+                trailing: Text('${[45, 32, 28][e.key]} ${l10n.boutique_analytics_sales}', style: textTheme.bodyMedium?.copyWith(color: colorScheme.onSurfaceVariant)),
               ),
             );
           }),

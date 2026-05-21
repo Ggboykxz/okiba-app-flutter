@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -82,12 +82,12 @@ class _KycScreenState extends State<KycScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppLocalizations.of(context)!.kycTitle,
+                AppLocalizations.of(context).kyc_title,
                 style: textTheme.headlineMedium,
               ),
               const SizedBox(height: AppSpacing.space8),
               Text(
-                AppLocalizations.of(context)!.kycSubtitle,
+                AppLocalizations.of(context).kyc_subtitle,
                 style: textTheme.bodyLarge?.copyWith(
                   color: colorScheme.onSurfaceVariant,
                 ),
@@ -159,14 +159,14 @@ class _KycScreenState extends State<KycScreen> {
                             ),
                             const SizedBox(height: AppSpacing.space16),
                             Text(
-                              AppLocalizations.of(context)!.kycVerified,
+                              AppLocalizations.of(context).kyc_verified,
                               style: textTheme.titleLarge?.copyWith(
                                 color: colorScheme.primary,
                               ),
                             ),
                             const SizedBox(height: AppSpacing.space8),
                             Text(
-                              AppLocalizations.of(context)!.kycRedirecting,
+                              AppLocalizations.of(context).kyc_redirecting,
                               style: textTheme.bodyMedium?.copyWith(
                                 color: colorScheme.onSurfaceVariant,
                               ),
@@ -187,12 +187,12 @@ class _KycScreenState extends State<KycScreen> {
                                 ),
                                 const SizedBox(height: AppSpacing.space24),
                                 Text(
-                                  AppLocalizations.of(context)!.kycVerifying,
+                                  AppLocalizations.of(context).kyc_verifying,
                                   style: textTheme.titleMedium,
                                 ),
                                 const SizedBox(height: AppSpacing.space8),
                                 Text(
-                                  AppLocalizations.of(context)!.kycAnalyzing,
+                                  AppLocalizations.of(context).kyc_analyzing,
                                   textAlign: TextAlign.center,
                                   style: textTheme.bodyMedium?.copyWith(
                                     color: colorScheme.onSurfaceVariant,
@@ -230,8 +230,8 @@ class _KycScreenState extends State<KycScreen> {
                                       Icons.camera_alt_rounded),
                                   label: Text(
                                     _currentStep == 0
-                                        ? AppLocalizations.of(context)!.kycSelfie
-                                        : AppLocalizations.of(context)!.kycTakePhoto,
+                                        ? AppLocalizations.of(context).kyc_selfie
+                                        : AppLocalizations.of(context).kyc_take_photo,
                                   ),
                                 ),
                               ],
@@ -244,17 +244,17 @@ class _KycScreenState extends State<KycScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   _CaptureStatus(
-                    label: AppLocalizations.of(context)!.kycStepSelfieLabel,
+                    label: AppLocalizations.of(context).kyc_step_selfie_label,
                     done: _selfieDone,
                   ),
                   const SizedBox(width: AppSpacing.space16),
                   _CaptureStatus(
-                    label: AppLocalizations.of(context)!.kycStepIdFrontLabel,
+                    label: AppLocalizations.of(context).kyc_step_id_front_label,
                     done: _idFrontDone,
                   ),
                   const SizedBox(width: AppSpacing.space16),
                   _CaptureStatus(
-                    label: AppLocalizations.of(context)!.kycStepIdBackLabel,
+                    label: AppLocalizations.of(context).kyc_step_id_back_label,
                     done: _idBackDone,
                   ),
                 ],
@@ -265,7 +265,7 @@ class _KycScreenState extends State<KycScreen> {
                 height: AppSpacing.touchMin,
                 child: ElevatedButton(
                   onPressed: _allDone && !_isVerifying ? _onVerify : null,
-                  child: Text(AppLocalizations.of(context)!.kycVerifyIdentity),
+                  child: Text(AppLocalizations.of(context).kyc_verify_identity),
                 ),
               ),
               const SizedBox(height: AppSpacing.space8),
@@ -290,28 +290,28 @@ class _KycScreenState extends State<KycScreen> {
   }
 
   String _getStepTitle(BuildContext context) {
-    final l = AppLocalizations.of(context)!;
+    final l = AppLocalizations.of(context);
     switch (_currentStep) {
       case 0:
-        return l.kycStepSelfieTitle;
+        return l.kyc_step_selfie_title;
       case 1:
-        return l.kycStepIdFrontTitle;
+        return l.kyc_step_id_front_title;
       case 2:
-        return l.kycStepIdBackTitle;
+        return l.kyc_step_id_back_title;
       default:
         return '';
     }
   }
 
   String _getStepSubtitle(BuildContext context) {
-    final l = AppLocalizations.of(context)!;
+    final l = AppLocalizations.of(context);
     switch (_currentStep) {
       case 0:
-        return l.kycStepSelfieDesc;
+        return l.kyc_step_selfie_desc;
       case 1:
-        return l.kycStepIdFrontDesc;
+        return l.kyc_step_id_front_desc;
       case 2:
-        return l.kycStepIdBackDesc;
+        return l.kyc_step_id_back_desc;
       default:
         return '';
     }

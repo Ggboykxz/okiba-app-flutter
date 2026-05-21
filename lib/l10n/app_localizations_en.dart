@@ -184,6 +184,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get auth_reset_sms_info => 'A reset code will be sent via SMS.';
 
   @override
+  String get auth_sms_info => 'You will receive an SMS to confirm your number.';
+
+  @override
   String get auth_new_password_title => 'New password';
 
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -79,12 +79,12 @@ class _SellerTypeDetailScreenState extends State<SellerTypeDetailScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppLocalizations.of(context)!.sellerTypeTitle,
+                AppLocalizations.of(context).seller_type_title,
                 style: textTheme.headlineMedium,
               ),
               const SizedBox(height: AppSpacing.space8),
               Text(
-                AppLocalizations.of(context)!.sellerTypeSubtitle,
+                AppLocalizations.of(context).seller_type_subtitle,
                 style: textTheme.bodyLarge?.copyWith(
                   color: colorScheme.onSurfaceVariant,
                 ),
@@ -114,7 +114,7 @@ class _SellerTypeDetailScreenState extends State<SellerTypeDetailScreen> {
                   onPressed: _selectedType != null
                       ? () => context.go(RoutePaths.kyc)
                       : null,
-                  child: Text(AppLocalizations.of(context)!.authContinue),
+                  child: Text(AppLocalizations.of(context).auth_continue),
                 ),
               ),
               const SizedBox(height: AppSpacing.space8),

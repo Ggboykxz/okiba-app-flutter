@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/navigation/route_names.dart';
 import '../../widgets/address_card.dart';
@@ -26,7 +26,7 @@ class _CheckoutAddressScreenState extends State<CheckoutAddressScreen> {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(AppLocalizations.of(context)!.checkout_address),
+        title: Text(AppLocalizations.of(context).checkout_address),
       ),
       body: ListView(
         padding: const EdgeInsets.only(bottom: 100),
@@ -56,7 +56,7 @@ class _CheckoutAddressScreenState extends State<CheckoutAddressScreen> {
               child: OutlinedButton.icon(
                 onPressed: () {},
                 icon: const Icon(Icons.add_rounded),
-                label: Text('${AppLocalizations.of(context)!.general_add} ${AppLocalizations.of(context)!.checkout_address}'),
+                label: Text('${AppLocalizations.of(context).general_add} ${AppLocalizations.of(context).checkout_address}'),
               ),
             ),
           ),

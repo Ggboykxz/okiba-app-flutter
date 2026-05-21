@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
 import 'package:go_router/go_router.dart';
@@ -25,14 +25,14 @@ class _BoutiqueCatalogScreenState extends State<BoutiqueCatalogScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.boutiqueCatalogTitle),
+        title: Text(l10n.boutique_catalog_title),
         actions: [
           IconButton(
             icon: const Icon(Icons.add_rounded),
@@ -48,7 +48,7 @@ class _BoutiqueCatalogScreenState extends State<BoutiqueCatalogScreen> {
             child: TextField(
               controller: _searchController,
               decoration: InputDecoration(
-                hintText: l10n.boutiqueCatalogSearch,
+                hintText: l10n.boutique_catalog_search,
                 prefixIcon: const Icon(Icons.search_rounded),
                 suffixIcon: _searchController.text.isNotEmpty
                     ? IconButton(
@@ -90,10 +90,10 @@ class _BoutiqueCatalogScreenState extends State<BoutiqueCatalogScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('12 ${l10n.boutiqueProducts?.toLowerCase() ?? ''}', style: textTheme.bodyMedium?.copyWith(color: colorScheme.onSurfaceVariant)),
+                Text('12 ${l10n.boutique_products.toLowerCase()}', style: textTheme.bodyMedium?.copyWith(color: colorScheme.onSurfaceVariant)),
                 TextButton.icon(
                   icon: const Icon(Icons.sort_rounded, size: 18),
-                  label: Text(l10n.generalSort),
+                  label: Text(l10n.general_sort),
                   onPressed: () => _showSortSheet(context),
                 ),
               ],
@@ -183,18 +183,18 @@ class _BoutiqueCatalogScreenState extends State<BoutiqueCatalogScreen> {
   }
 
   void _showSortSheet(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     showModalBottomSheet(
       context: context,
       builder: (ctx) => SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ListTile(title: Text(l10n.boutiqueCatalogSortNameAz), leading: const Icon(Icons.sort_by_alpha_rounded), onTap: () => Navigator.pop(ctx)),
-            ListTile(title: Text(l10n.boutiqueCatalogSortPriceAsc), leading: const Icon(Icons.arrow_upward_rounded), onTap: () => Navigator.pop(ctx)),
-            ListTile(title: Text(l10n.boutiqueCatalogSortPriceDesc), leading: const Icon(Icons.arrow_downward_rounded), onTap: () => Navigator.pop(ctx)),
-            ListTile(title: Text(l10n.boutiqueCatalogSortStock), leading: const Icon(Icons.inventory_rounded), onTap: () => Navigator.pop(ctx)),
-            ListTile(title: Text(l10n.boutiqueCatalogSortRecent), leading: const Icon(Icons.schedule_rounded), onTap: () => Navigator.pop(ctx)),
+            ListTile(title: Text(l10n.boutique_catalog_sort_name_az), leading: const Icon(Icons.sort_by_alpha_rounded), onTap: () => Navigator.pop(ctx)),
+            ListTile(title: Text(l10n.boutique_catalog_sort_price_asc), leading: const Icon(Icons.arrow_upward_rounded), onTap: () => Navigator.pop(ctx)),
+            ListTile(title: Text(l10n.boutique_catalog_sort_price_desc), leading: const Icon(Icons.arrow_downward_rounded), onTap: () => Navigator.pop(ctx)),
+            ListTile(title: Text(l10n.boutique_catalog_sort_stock), leading: const Icon(Icons.inventory_rounded), onTap: () => Navigator.pop(ctx)),
+            ListTile(title: Text(l10n.boutique_catalog_sort_recent), leading: const Icon(Icons.schedule_rounded), onTap: () => Navigator.pop(ctx)),
           ],
         ),
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -51,12 +51,12 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppLocalizations.of(context)!.profileSetupTitle,
+                  AppLocalizations.of(context).profile_setup_title,
                   style: textTheme.headlineMedium,
                 ),
                 const SizedBox(height: AppSpacing.space8),
                 Text(
-                  AppLocalizations.of(context)!.profileSetupSubtitle,
+                  AppLocalizations.of(context).profile_setup_subtitle,
                   style: textTheme.bodyLarge?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                   ),
@@ -103,12 +103,12 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                   controller: _nameController,
                   textCapitalization: TextCapitalization.words,
                   decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context)!.authNameHint,
+                    labelText: AppLocalizations.of(context).auth_name_hint,
                     prefixIcon: const Icon(Icons.person_rounded),
                   ),
                   validator: (v) {
                     if (v == null || v.trim().isEmpty) {
-                      return AppLocalizations.of(context)!.profileNameRequired;
+                      return AppLocalizations.of(context).profile_name_required;
                     }
                     return null;
                   },
@@ -119,7 +119,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                   maxLines: 3,
                   maxLength: 150,
                   decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context)!.profileBioHint,
+                    labelText: AppLocalizations.of(context).profile_bio_hint,
                     prefixIcon: const Icon(Icons.edit_rounded),
                     alignLabelWithHint: true,
                   ),
@@ -131,7 +131,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                   child: OutlinedButton.icon(
                     onPressed: () {},
                     icon: const Icon(Icons.location_on_rounded),
-                    label: Text(AppLocalizations.of(context)!.profileShareLocation),
+                    label: Text(AppLocalizations.of(context).profile_share_location),
                   ),
                 ),
                 const Spacer(),
@@ -140,7 +140,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                   height: AppSpacing.touchMin,
                   child: ElevatedButton(
                     onPressed: _onSave,
-                    child: Text(AppLocalizations.of(context)!.generalSave),
+                    child: Text(AppLocalizations.of(context).general_save),
                   ),
                 ),
                 const SizedBox(height: AppSpacing.space8),

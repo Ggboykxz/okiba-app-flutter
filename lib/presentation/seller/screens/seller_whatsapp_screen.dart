@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/constants/app_colors.dart';
@@ -10,14 +10,14 @@ class SellerWhatsAppScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.sellerWhatsappTitle),
+        title: Text(l10n.seller_whatsapp_title),
         actions: [
           IconButton(
             icon: const Icon(Icons.share_rounded),
@@ -59,14 +59,14 @@ class SellerWhatsAppScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        l10n.sellerWhatsappConnected,
+                        l10n.seller_whatsapp_connected,
                         style: textTheme.titleMedium?.copyWith(
                           color: AppColors.whatsapp,
                         ),
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        l10n.sellerWhatsappDesc,
+                        l10n.seller_whatsapp_desc,
                         style: textTheme.bodySmall?.copyWith(
                           color: colorScheme.onSurfaceVariant,
                         ),
@@ -84,14 +84,14 @@ class SellerWhatsAppScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Statistiques
-          Text(l10n.sellerSalesToday, style: textTheme.titleLarge),
+          Text(l10n.seller_sales_today, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           Row(
             children: [
               Expanded(
                 child: _statCard(
                   '3',
-                  l10n.sellerWhatsappOrdersNew,
+                  l10n.seller_whatsapp_orders_new,
                   Icons.shopping_bag_rounded,
                   colorScheme.primary,
                   colorScheme,
@@ -102,7 +102,7 @@ class SellerWhatsAppScreen extends StatelessWidget {
               Expanded(
                 child: _statCard(
                   '15',
-                  l10n.sellerWhatsappMessages,
+                  l10n.seller_whatsapp_messages,
                   Icons.chat_rounded,
                   colorScheme.secondary,
                   colorScheme,
@@ -113,7 +113,7 @@ class SellerWhatsAppScreen extends StatelessWidget {
               Expanded(
                 child: _statCard(
                   '12 500',
-                  '${l10n.currencyFcfa}\n${l10n.boutiqueSales}',
+                  '${l10n.currency_fcfa}\n${l10n.boutique_sales}',
                   Icons.trending_up_rounded,
                   AppColors.whatsapp,
                   colorScheme,
@@ -124,7 +124,7 @@ class SellerWhatsAppScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Partager catalogue
-          Text(l10n.sellerWhatsappCatalog, style: textTheme.titleLarge),
+          Text(l10n.seller_whatsapp_catalog, style: textTheme.titleLarge),
           const SizedBox(height: AppSpacing.space16),
           SizedBox(
             height: AppSpacing.touchMin,
@@ -132,7 +132,7 @@ class SellerWhatsAppScreen extends StatelessWidget {
             child: ElevatedButton.icon(
               onPressed: () => context.push(RoutePaths.whatsappProductCreate),
               icon: const Icon(Icons.share_rounded),
-              label: Text(l10n.sellerWhatsappShareCatalog),
+              label: Text(l10n.seller_whatsapp_share_catalog),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.whatsapp,
                 foregroundColor: Colors.white,
@@ -146,7 +146,7 @@ class SellerWhatsAppScreen extends StatelessWidget {
             child: OutlinedButton.icon(
               onPressed: () => context.push(RoutePaths.whatsappStats),
               icon: const Icon(Icons.bar_chart_rounded),
-              label: Text(l10n.sellerWhatsappStats),
+              label: Text(l10n.seller_whatsapp_stats),
             ),
           ),
           const SizedBox(height: AppSpacing.space24),
@@ -154,10 +154,10 @@ class SellerWhatsAppScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('${l10n.sellerOrders} ${l10n.generalSeeAll?.toLowerCase() ?? ''}', style: textTheme.titleLarge),
+              Text('${l10n.seller_orders} ${l10n.general_see_all.toLowerCase()}', style: textTheme.titleLarge),
               TextButton(
                 onPressed: () => context.push(RoutePaths.whatsappOrders),
-                child: Text(l10n.generalSeeAll),
+                child: Text(l10n.general_see_all),
               ),
             ],
           ),

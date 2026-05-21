@@ -440,6 +440,12 @@ abstract class AppLocalizations {
   /// **'A reset code will be sent via SMS.'**
   String get auth_reset_sms_info;
 
+  /// No description provided for @auth_sms_info.
+  ///
+  /// In en, this message translates to:
+  /// **'You will receive an SMS to confirm your number.'**
+  String get auth_sms_info;
+
   /// No description provided for @auth_new_password_title.
   ///
   /// In en, this message translates to:

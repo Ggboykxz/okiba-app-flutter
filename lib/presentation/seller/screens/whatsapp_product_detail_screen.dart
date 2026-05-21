@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/constants/app_colors.dart';
@@ -12,7 +12,7 @@ class WhatsAppProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
@@ -23,7 +23,7 @@ class WhatsAppProductDetailScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(l10n.sellerWhatsappProductDetail),
+        title: Text(l10n.seller_whatsapp_product_detail),
         actions: [
           IconButton(
             icon: const Icon(Icons.edit_rounded),
@@ -77,8 +77,8 @@ class WhatsAppProductDetailScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(l10n.sellerWhatsappPublished, style: textTheme.titleSmall),
-                      Text(l10n.sellerWhatsappVisible, style: textTheme.bodySmall?.copyWith(
+                      Text(l10n.seller_whatsapp_published, style: textTheme.titleSmall),
+                      Text(l10n.seller_whatsapp_visible, style: textTheme.bodySmall?.copyWith(
                         color: colorScheme.onSurfaceVariant,
                       )),
                     ],
@@ -94,7 +94,7 @@ class WhatsAppProductDetailScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Share actions
-          Text(l10n.generalShare, style: textTheme.titleMedium),
+          Text(l10n.general_share, style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space12),
           SizedBox(
             width: double.infinity,
@@ -102,7 +102,7 @@ class WhatsAppProductDetailScreen extends StatelessWidget {
             child: ElevatedButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.share_rounded),
-              label: Text(l10n.sellerWhatsappShare),
+              label: Text(l10n.seller_whatsapp_share),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.whatsapp,
                 foregroundColor: Colors.white,
@@ -116,7 +116,7 @@ class WhatsAppProductDetailScreen extends StatelessWidget {
             child: OutlinedButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.link_rounded),
-              label: Text(l10n.sellerWhatsappCopyLink),
+              label: Text(l10n.seller_whatsapp_copy_link),
             ),
           ),
           const SizedBox(height: AppSpacing.space12),
@@ -126,12 +126,12 @@ class WhatsAppProductDetailScreen extends StatelessWidget {
             child: OutlinedButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.qr_code_rounded),
-              label: Text(l10n.sellerWhatsappQrCode),
+              label: Text(l10n.seller_whatsapp_qr_code),
             ),
           ),
           const SizedBox(height: AppSpacing.space24),
           // Description
-          Text(l10n.productDescription, style: textTheme.titleMedium),
+          Text(l10n.product_description, style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space8),
           Text(
             'Chemise traditionnelle gabonaise en pagne wax.\n\n\u2022 100% coton\n\u2022 Taille unique\n\u2022 Lavage 30\u00b0C',
@@ -139,15 +139,15 @@ class WhatsAppProductDetailScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Stats
-          Text(l10n.sellerWhatsappStatsTitle, style: textTheme.titleMedium),
+          Text(l10n.seller_whatsapp_stats_title, style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.space12),
           Row(
             children: [
-              _miniStat(l10n.sellerWhatsappViews, '156', Icons.visibility_rounded, colorScheme, textTheme),
+              _miniStat(l10n.seller_whatsapp_views, '156', Icons.visibility_rounded, colorScheme, textTheme),
               const SizedBox(width: AppSpacing.space12),
-              _miniStat(l10n.sellerWhatsappClicks, '43', Icons.touch_app_rounded, colorScheme, textTheme),
+              _miniStat(l10n.seller_whatsapp_clicks, '43', Icons.touch_app_rounded, colorScheme, textTheme),
               const SizedBox(width: AppSpacing.space12),
-              _miniStat(l10n.sellerWhatsappSales, '12', Icons.shopping_bag_rounded, colorScheme, textTheme),
+              _miniStat(l10n.seller_whatsapp_sales, '12', Icons.shopping_bag_rounded, colorScheme, textTheme),
             ],
           ),
           const SizedBox(height: AppSpacing.space32),

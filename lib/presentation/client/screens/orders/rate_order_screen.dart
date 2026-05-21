@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../../core/constants/app_spacing.dart';
 
 class RateOrderScreen extends StatefulWidget {
@@ -36,7 +36,7 @@ class _RateOrderScreenState extends State<RateOrderScreen> {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(AppLocalizations.of(context)!.review_title),
+        title: Text(AppLocalizations.of(context).review_title),
       ),
       body: _submitted
           ? Center(
@@ -58,7 +58,7 @@ class _RateOrderScreenState extends State<RateOrderScreen> {
                       height: AppSpacing.touchMin,
                       child: ElevatedButton(
                         onPressed: () => context.pop(),
-                        child: Text(AppLocalizations.of(context)!.general_close),
+                        child: Text(AppLocalizations.of(context).general_close),
                       ),
                     ),
                   ],
@@ -69,7 +69,7 @@ class _RateOrderScreenState extends State<RateOrderScreen> {
               padding: const EdgeInsets.all(AppSpacing.space16),
               children: [
                 // Seller rating
-                Text(AppLocalizations.of(context)!.order_rate_seller, style: textTheme.titleMedium),
+                Text(AppLocalizations.of(context).order_rate_seller, style: textTheme.titleMedium),
                 const SizedBox(height: AppSpacing.space8),
                 Card(
                   child: Padding(
@@ -106,7 +106,7 @@ class _RateOrderScreenState extends State<RateOrderScreen> {
                 ),
                 const SizedBox(height: AppSpacing.space24),
                 // Delivery rating
-                Text(AppLocalizations.of(context)!.order_rate_delivery, style: textTheme.titleMedium),
+                Text(AppLocalizations.of(context).order_rate_delivery, style: textTheme.titleMedium),
                 const SizedBox(height: AppSpacing.space8),
                 Card(
                   child: Padding(
@@ -143,7 +143,7 @@ class _RateOrderScreenState extends State<RateOrderScreen> {
                 ),
                 const SizedBox(height: AppSpacing.space24),
                 // Comment
-                Text('${AppLocalizations.of(context)!.order_rate_comment} (optionnel)', style: textTheme.titleSmall),
+                Text('${AppLocalizations.of(context).order_rate_comment} (optionnel)', style: textTheme.titleSmall),
                 const SizedBox(height: AppSpacing.space8),
                 TextField(
                   controller: _commentController,
@@ -162,7 +162,7 @@ class _RateOrderScreenState extends State<RateOrderScreen> {
                     onPressed: (_sellerRating > 0 || _deliveryRating > 0)
                         ? () => setState(() => _submitted = true)
                         : null,
-                    child: Text(AppLocalizations.of(context)!.review_submit),
+                    child: Text(AppLocalizations.of(context).review_submit),
                   ),
                 ),
                 const SizedBox(height: AppSpacing.space16),

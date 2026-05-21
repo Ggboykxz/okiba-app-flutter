@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/navigation/route_names.dart';
 
@@ -19,13 +19,13 @@ class CheckoutReviewScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(AppLocalizations.of(context)!.checkout_summary),
+        title: Text(AppLocalizations.of(context).checkout_summary),
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.space16),
         children: [
           // Address section
-          _SectionHeader(textTheme, AppLocalizations.of(context)!.checkout_address),
+          _SectionHeader(textTheme, AppLocalizations.of(context).checkout_address),
           const SizedBox(height: AppSpacing.space8),
           Card(
             child: ListTile(
@@ -37,7 +37,7 @@ class CheckoutReviewScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Delivery section
-          _SectionHeader(textTheme, AppLocalizations.of(context)!.checkout_delivery_mode),
+          _SectionHeader(textTheme, AppLocalizations.of(context).checkout_delivery_mode),
           const SizedBox(height: AppSpacing.space8),
           Card(
             child: ListTile(
@@ -49,7 +49,7 @@ class CheckoutReviewScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppSpacing.space24),
           // Payment section
-          _SectionHeader(textTheme, AppLocalizations.of(context)!.checkout_review_payment),
+          _SectionHeader(textTheme, AppLocalizations.of(context).checkout_review_payment),
           const SizedBox(height: AppSpacing.space8),
           Card(
             child: ListTile(
@@ -84,9 +84,9 @@ class CheckoutReviewScreen extends StatelessWidget {
                 children: [
                   _TotalRow('Sous-total', '105 500 FCFA', textTheme, colorScheme),
                   const SizedBox(height: AppSpacing.space4),
-                  _TotalRow(AppLocalizations.of(context)!.checkout_review_delivery, '2 000 FCFA', textTheme, colorScheme),
+                  _TotalRow(AppLocalizations.of(context).checkout_review_delivery, '2 000 FCFA', textTheme, colorScheme),
                   const Divider(height: AppSpacing.space16),
-                  _TotalRow(AppLocalizations.of(context)!.order_total, '107 500 FCFA', textTheme, colorScheme, isTotal: true),
+                  _TotalRow(AppLocalizations.of(context).order_total, '107 500 FCFA', textTheme, colorScheme, isTotal: true),
                 ],
               ),
             ),
@@ -105,7 +105,7 @@ class CheckoutReviewScreen extends StatelessWidget {
             height: AppSpacing.touchMin,
             child: ElevatedButton(
               onPressed: () => context.push(RoutePaths.paymentProcessing),
-              child: Text(AppLocalizations.of(context)!.checkout_pay('107 500 FCFA')),
+              child: Text(AppLocalizations.of(context).checkout_pay('107 500 FCFA')),
             ),
           ),
         ),

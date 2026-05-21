@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../../core/constants/app_spacing.dart';
 import '../../../../core/navigation/route_names.dart';
 
@@ -31,13 +31,13 @@ class PaymentFailedScreen extends StatelessWidget {
               ),
               const SizedBox(height: AppSpacing.space32),
               Text(
-                AppLocalizations.of(context)!.checkout_failed,
+                AppLocalizations.of(context).checkout_failed,
                 style: textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: AppSpacing.space12),
               Text(
-                AppLocalizations.of(context)!.checkout_failed_desc,
+                AppLocalizations.of(context).checkout_failed_desc,
                 style: textTheme.bodyLarge?.copyWith(color: colorScheme.onSurfaceVariant),
                 textAlign: TextAlign.center,
               ),
@@ -70,7 +70,7 @@ class PaymentFailedScreen extends StatelessWidget {
                 child: ElevatedButton.icon(
                   onPressed: () => context.go(RoutePaths.paymentProcessing),
                   icon: const Icon(Icons.refresh_rounded),
-                  label: Text(AppLocalizations.of(context)!.general_retry),
+                  label: Text(AppLocalizations.of(context).general_retry),
                 ),
               ),
               const SizedBox(height: AppSpacing.space16),
@@ -80,7 +80,7 @@ class PaymentFailedScreen extends StatelessWidget {
                 child: OutlinedButton.icon(
                   onPressed: () => context.go(RoutePaths.checkoutPayment),
                   icon: const Icon(Icons.credit_card_rounded),
-                  label: Text(AppLocalizations.of(context)!.general_retry),
+                  label: Text(AppLocalizations.of(context).general_retry),
                 ),
               ),
               const SizedBox(height: AppSpacing.space16),

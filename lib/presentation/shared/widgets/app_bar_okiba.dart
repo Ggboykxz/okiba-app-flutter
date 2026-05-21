@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/constants/app_spacing.dart';
+import '../../../core/widgets/okiba_logo.dart';
 
 enum AppBarStyle { transparent, opaque, search }
 
@@ -58,13 +58,18 @@ class AppBarOkiba extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: showBack,
       leading: leading,
       title: showLogo
-          ? SvgPicture.asset(
-              'assets/logo/okiba_wordmark.svg',
-              height: 28,
-              colorFilter: ColorFilter.mode(
-                colorScheme.onSurface,
-                BlendMode.srcIn,
-              ),
+          ? Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                OkibaLogo(variant: LogoVariant.mark, size: LogoSize.sm),
+                const SizedBox(width: 8),
+                Text(
+                  'OKIBA',
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
             )
           : (title != null
               ? Text(title!, style: theme.textTheme.titleLarge)

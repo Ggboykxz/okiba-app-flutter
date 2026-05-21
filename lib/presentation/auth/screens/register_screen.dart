@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
@@ -49,12 +49,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppLocalizations.of(context)!.authRegisterTitle,
+                  AppLocalizations.of(context).auth_register_title,
                   style: textTheme.headlineMedium,
                 ),
                 const SizedBox(height: AppSpacing.space8),
                 Text(
-                  AppLocalizations.of(context)!.authRegisterSubtitle,
+                  AppLocalizations.of(context).auth_register_subtitle,
                   style: textTheme.bodyLarge?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                   ),
@@ -64,20 +64,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   controller: _phoneController,
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context)!.authPhoneHint,
+                    labelText: AppLocalizations.of(context).auth_phone_hint,
                     prefixText: '  ',
                     prefixIcon: const Icon(Icons.phone_rounded),
                   ),
                   validator: (v) {
                     if (v == null || v.length < 10) {
-                      return AppLocalizations.of(context)!.authInvalidPhone;
+                      return AppLocalizations.of(context).auth_invalid_phone;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: AppSpacing.space8),
                 Text(
-                  AppLocalizations.of(context)!.authSmsInfo,
+                  AppLocalizations.of(context).auth_sms_info,
                   style: textTheme.bodySmall?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                   ),
@@ -88,14 +88,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: AppSpacing.touchMin,
                   child: ElevatedButton(
                     onPressed: _onContinue,
-                    child: Text(AppLocalizations.of(context)!.authContinue),
+                    child: Text(AppLocalizations.of(context).auth_continue),
                   ),
                 ),
                 const SizedBox(height: AppSpacing.space16),
                 Center(
                   child: TextButton(
                     onPressed: () => context.push(RoutePaths.emailRegister),
-                    child: Text(AppLocalizations.of(context)!.authRegisterEmail),
+                    child: Text(AppLocalizations.of(context).auth_register_email),
                   ),
                 ),
                 const SizedBox(height: AppSpacing.space8),

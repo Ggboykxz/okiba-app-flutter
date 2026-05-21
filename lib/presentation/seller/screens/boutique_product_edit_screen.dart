@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 
 class BoutiqueProductEditScreen extends StatefulWidget {
@@ -35,18 +35,18 @@ class _BoutiqueProductEditScreenState extends State<BoutiqueProductEditScreen> {
   }
 
   void _confirmDelete() {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text(l10n.boutiqueProductEditDeleteConfirm),
-        content: Text(l10n.boutiqueProductEditDeleteIrreversible),
+        title: Text(l10n.boutique_product_edit_delete_confirm),
+        content: Text(l10n.boutique_product_edit_delete_irreversible),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(l10n.generalCancel)),
+          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(l10n.general_cancel)),
           FilledButton(
             style: FilledButton.styleFrom(backgroundColor: Theme.of(context).colorScheme.error),
             onPressed: () { Navigator.pop(ctx); Navigator.pop(context); },
-            child: Text(l10n.generalDelete),
+            child: Text(l10n.general_delete),
           ),
         ],
       ),
@@ -55,18 +55,18 @@ class _BoutiqueProductEditScreenState extends State<BoutiqueProductEditScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(l10n.boutiqueProductEditTitle),
+        title: Text(l10n.boutique_product_edit_title),
         actions: [
           TextButton(
             onPressed: _formKey.currentState?.validate() == true ? () {} : null,
-            child: Text(l10n.boutiqueProductEditSave),
+            child: Text(l10n.boutique_product_edit_save),
           ),
         ],
       ),
@@ -76,7 +76,7 @@ class _BoutiqueProductEditScreenState extends State<BoutiqueProductEditScreen> {
           padding: const EdgeInsets.all(AppSpacing.space16),
           children: [
             // Photos
-            Text(l10n.boutiqueProductCreatePhotos, style: textTheme.titleMedium),
+            Text(l10n.boutique_product_create_photos, style: textTheme.titleMedium),
             const SizedBox(height: AppSpacing.space12),
             SizedBox(
               height: 100,
@@ -124,8 +124,8 @@ class _BoutiqueProductEditScreenState extends State<BoutiqueProductEditScreen> {
             const SizedBox(height: AppSpacing.space24),
             // Status toggle
             SwitchListTile(
-              title: Text(l10n.boutiqueProductEditActive),
-              subtitle: Text(_isActive ? l10n.boutiqueProductEditVisible : l10n.boutiqueProductEditHidden),
+              title: Text(l10n.boutique_product_edit_active),
+              subtitle: Text(_isActive ? l10n.boutique_product_edit_visible : l10n.boutique_product_edit_hidden),
               value: _isActive,
               onChanged: (v) => setState(() => _isActive = v),
             ),
@@ -133,14 +133,14 @@ class _BoutiqueProductEditScreenState extends State<BoutiqueProductEditScreen> {
             // Name
             TextFormField(
               controller: _nameController,
-              decoration: InputDecoration(labelText: l10n.boutiqueProductCreateName),
-              validator: (v) => (v == null || v.isEmpty) ? l10n.boutiqueProductCreateNameRequired : null,
+              decoration: InputDecoration(labelText: l10n.boutique_product_create_name),
+              validator: (v) => (v == null || v.isEmpty) ? l10n.boutique_product_create_name_required : null,
             ),
             const SizedBox(height: AppSpacing.space16),
             // Category
             DropdownButtonFormField<String>(
               initialValue: _category,
-              decoration: InputDecoration(labelText: l10n.boutiqueProductCreateCategory),
+              decoration: InputDecoration(labelText: l10n.boutique_product_create_category),
               items: _categories.map((c) => DropdownMenuItem(value: c, child: Text(c))).toList(),
               onChanged: (v) => setState(() => _category = v!),
             ),
@@ -151,16 +151,16 @@ class _BoutiqueProductEditScreenState extends State<BoutiqueProductEditScreen> {
                 Expanded(flex: 2,
                   child: TextFormField(
                     controller: _priceController,
-                    decoration: InputDecoration(labelText: l10n.boutiqueProductCreatePrice),
+                    decoration: InputDecoration(labelText: l10n.boutique_product_create_price),
                     keyboardType: TextInputType.number,
-                    validator: (v) => (v == null || v.isEmpty) ? l10n.boutiqueProductCreateNameRequired : null,
+                    validator: (v) => (v == null || v.isEmpty) ? l10n.boutique_product_create_name_required : null,
                   ),
                 ),
                 const SizedBox(width: AppSpacing.space12),
                 Expanded(
                   child: TextFormField(
                     controller: _skuController,
-                    decoration: InputDecoration(labelText: l10n.boutiqueProductCreateSku),
+                    decoration: InputDecoration(labelText: l10n.boutique_product_create_sku),
                   ),
                 ),
               ],
@@ -172,16 +172,16 @@ class _BoutiqueProductEditScreenState extends State<BoutiqueProductEditScreen> {
                 Expanded(
                   child: TextFormField(
                     controller: _stockController,
-                    decoration: InputDecoration(labelText: l10n.boutiqueProductCreateStock),
+                    decoration: InputDecoration(labelText: l10n.boutique_product_create_stock),
                     keyboardType: TextInputType.number,
-                    validator: (v) => (v == null || v.isEmpty) ? l10n.boutiqueProductCreateNameRequired : null,
+                    validator: (v) => (v == null || v.isEmpty) ? l10n.boutique_product_create_name_required : null,
                   ),
                 ),
                 const SizedBox(width: AppSpacing.space12),
                 Expanded(
                   child: TextFormField(
                     controller: _weightController,
-                    decoration: InputDecoration(labelText: l10n.boutiqueProductCreateWeight),
+                    decoration: InputDecoration(labelText: l10n.boutique_product_create_weight),
                     keyboardType: TextInputType.number,
                   ),
                 ),
@@ -191,7 +191,7 @@ class _BoutiqueProductEditScreenState extends State<BoutiqueProductEditScreen> {
             // Description
             TextFormField(
               controller: _descriptionController,
-              decoration: InputDecoration(labelText: l10n.boutiqueProductCreateDescription, alignLabelWithHint: true),
+              decoration: InputDecoration(labelText: l10n.boutique_product_create_description, alignLabelWithHint: true),
               maxLines: 4,
             ),
             const SizedBox(height: AppSpacing.space32),
@@ -199,7 +199,7 @@ class _BoutiqueProductEditScreenState extends State<BoutiqueProductEditScreen> {
             Center(
               child: TextButton.icon(
                 icon: const Icon(Icons.delete_outline_rounded),
-                label: Text(l10n.boutiqueProductEditDelete),
+                label: Text(l10n.boutique_product_edit_delete),
                 style: TextButton.styleFrom(foregroundColor: colorScheme.error),
                 onPressed: _confirmDelete,
               ),

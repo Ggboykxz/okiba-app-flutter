@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_spacing.dart';
 
@@ -30,7 +30,7 @@ class _WhatsAppProductEditScreenState extends State<WhatsAppProductEditScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
@@ -41,7 +41,7 @@ class _WhatsAppProductEditScreenState extends State<WhatsAppProductEditScreen> {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => context.pop(),
         ),
-        title: Text(l10n.sellerWhatsappProductEdit),
+        title: Text(l10n.seller_whatsapp_product_edit),
         actions: [
           IconButton(
             icon: Icon(Icons.delete_outline_rounded, color: colorScheme.error),
@@ -49,13 +49,13 @@ class _WhatsAppProductEditScreenState extends State<WhatsAppProductEditScreen> {
               showDialog(
                 context: context,
                 builder: (ctx) => AlertDialog(
-                  title: Text(l10n.sellerWhatsappDeleteConfirm),
-                  content: Text(l10n.sellerWhatsappDeleteIrreversible),
+                  title: Text(l10n.seller_whatsapp_delete_confirm),
+                  content: Text(l10n.seller_whatsapp_delete_irreversible),
                   actions: [
-                    TextButton(onPressed: () => Navigator.pop(ctx), child: Text(l10n.generalCancel)),
+                    TextButton(onPressed: () => Navigator.pop(ctx), child: Text(l10n.general_cancel)),
                     TextButton(
                       onPressed: () { Navigator.pop(ctx); context.pop(); },
-                      child: Text(l10n.generalDelete, style: TextStyle(color: colorScheme.error)),
+                      child: Text(l10n.general_delete, style: TextStyle(color: colorScheme.error)),
                     ),
                   ],
                 ),
@@ -70,7 +70,7 @@ class _WhatsAppProductEditScreenState extends State<WhatsAppProductEditScreen> {
           padding: const EdgeInsets.all(AppSpacing.space16),
           children: [
             // Photos
-            Text(l10n.boutiqueProductCreatePhotos, style: textTheme.titleSmall),
+            Text(l10n.boutique_product_create_photos, style: textTheme.titleSmall),
             const SizedBox(height: AppSpacing.space8),
             SizedBox(
               height: 100,
@@ -107,15 +107,15 @@ class _WhatsAppProductEditScreenState extends State<WhatsAppProductEditScreen> {
             const SizedBox(height: AppSpacing.space24),
             TextFormField(
               controller: _nameController,
-              decoration: InputDecoration(labelText: l10n.boutiqueProductCreateName, prefixIcon: const Icon(Icons.shopping_bag_rounded)),
-              validator: (v) => v == null || v.trim().isEmpty ? l10n.sellerWhatsappNameRequired : null,
+              decoration: InputDecoration(labelText: l10n.boutique_product_create_name, prefixIcon: const Icon(Icons.shopping_bag_rounded)),
+              validator: (v) => v == null || v.trim().isEmpty ? l10n.seller_whatsapp_name_required : null,
             ),
             const SizedBox(height: AppSpacing.space16),
             TextFormField(
               controller: _priceController,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: l10n.boutiqueProductCreatePrice, prefixIcon: const Icon(Icons.monetization_on_rounded)),
-              validator: (v) => v == null || v.trim().isEmpty ? l10n.sellerWhatsappPriceRequired : null,
+              decoration: InputDecoration(labelText: l10n.boutique_product_create_price, prefixIcon: const Icon(Icons.monetization_on_rounded)),
+              validator: (v) => v == null || v.trim().isEmpty ? l10n.seller_whatsapp_price_required : null,
             ),
             const SizedBox(height: AppSpacing.space16),
             TextFormField(
@@ -123,7 +123,7 @@ class _WhatsAppProductEditScreenState extends State<WhatsAppProductEditScreen> {
               maxLines: 4,
               maxLength: 300,
               decoration: InputDecoration(
-                labelText: l10n.boutiqueProductCreateDescription, prefixIcon: const Icon(Icons.description_rounded), alignLabelWithHint: true,
+                labelText: l10n.boutique_product_create_description, prefixIcon: const Icon(Icons.description_rounded), alignLabelWithHint: true,
               ),
             ),
             const SizedBox(height: AppSpacing.space32),
@@ -133,12 +133,12 @@ class _WhatsAppProductEditScreenState extends State<WhatsAppProductEditScreen> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text(l10n.sellerWhatsappUpdated)),
+                      SnackBar(content: Text(l10n.seller_whatsapp_updated)),
                     );
                     context.pop();
                   }
                 },
-                child: Text(l10n.boutiqueProductEditSave),
+                child: Text(l10n.boutique_product_edit_save),
               ),
             ),
             const SizedBox(height: AppSpacing.space8),

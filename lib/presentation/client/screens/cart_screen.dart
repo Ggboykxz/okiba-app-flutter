@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:okiba/l10n/generated/app_localizations.dart';
+import 'package:okiba/l10n/app_localizations.dart';
 import '../../../core/constants/app_spacing.dart';
 import '../../../core/navigation/route_names.dart';
 import '../widgets/cart_item_card.dart';
@@ -20,11 +20,11 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.cart_title),
+        title: Text(AppLocalizations.of(context).cart_title),
         actions: [
           TextButton(
             onPressed: () {},
-            child: Text(AppLocalizations.of(context)!.cart_clear),
+            child: Text(AppLocalizations.of(context).cart_clear),
           ),
         ],
       ),
@@ -94,7 +94,7 @@ class CartScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                     Text(
-                      AppLocalizations.of(context)!.checkout_review_delivery,
+                      AppLocalizations.of(context).checkout_review_delivery,
                       style: textTheme.bodyLarge?.copyWith(
                         color: colorScheme.onSurfaceVariant,
                       ),
@@ -110,7 +110,7 @@ class CartScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                     Text(
-                      AppLocalizations.of(context)!.cart_total,
+                      AppLocalizations.of(context).cart_total,
                       style: textTheme.titleLarge,
                     ),
                   Text(
@@ -128,7 +128,7 @@ class CartScreen extends StatelessWidget {
                 height: AppSpacing.touchMin,
                 child: ElevatedButton(
                   onPressed: () => context.push(RoutePaths.checkoutAddress),
-                  child: Text(AppLocalizations.of(context)!.cart_checkout),
+                  child: Text(AppLocalizations.of(context).cart_checkout),
                 ),
               ),
             ],
